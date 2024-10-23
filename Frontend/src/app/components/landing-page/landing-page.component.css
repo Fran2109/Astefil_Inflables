@@ -1,0 +1,46 @@
+.landing-page {
+    text-align: center;
+    padding: 40px;
+}
+
+.hero-section {
+    background: url('assets/hero-background.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 60px 20px;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 0;
+}
+
+.feature {
+    width: 30%;
+    text-align: center;
+}
+
+.feature img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.testimonial-section {
+    margin-top: 60px;
+}
+
+.testimonial-card {
+    max-width: 600px;
+    margin: 20px auto;
+}
