@@ -6,27 +6,28 @@
                 <li
                     *ngFor="let category of categories"
                     (click)="selectCategory(category)"
-                    [class.active]="category === selectedCategory"
+                    [class.active]="category.id === selectedCategory?.id"
                 >
                     {{ category.name }}
                 </li>
             </ul>
         </div>
         <div class="inflables-list">
-            <h2>{{ selectedCategory.name }}</h2>
-            <div
-                class="inflable-card"
-                *ngFor="let inflable of selectedCategory.inflables"
-            >
+            <h2>{{ selectedCategory?.name }}</h2>
+            <div class="inflable-card" *ngFor="let inflable of inflables">
                 <div class="card-image-wrapper">
-                    <img [src]="inflable.image" [alt]="inflable.name" />
+                    <img [src]="inflable.images[0]" [alt]="inflable.name" />
                 </div>
                 <div class="card-content">
                     <h3>{{ inflable.name }}</h3>
                     <p>{{ inflable.description }}</p>
                 </div>
                 <div class="card-actions">
-                    <button mat-raised-button color="primary">
+                    <button
+                        mat-raised-button
+                        color="primary"
+                        class="mat-elevation-z4"
+                    >
                         Más Información
                     </button>
                 </div>
