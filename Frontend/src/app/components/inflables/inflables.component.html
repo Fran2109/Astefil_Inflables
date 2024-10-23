@@ -1,0 +1,30 @@
+<section class="inflables-section">
+    <div class="inflables-container">
+        <div class="categories-sidebar">
+            <h3>Categorías</h3>
+            <ul>
+                <li
+                    *ngFor="let category of categories"
+                    (click)="selectCategory(category)"
+                    [class.active]="category === selectedCategory"
+                >
+                    {{ category.name }}
+                </li>
+            </ul>
+        </div>
+        <div class="inflables-list">
+            <h2>{{ selectedCategory.name }}</h2>
+            <div
+                class="inflable-card"
+                *ngFor="let inflable of selectedCategory.inflables"
+            >
+                <img [src]="inflable.image" [alt]="inflable.name" />
+                <h3>{{ inflable.name }}</h3>
+                <p>{{ inflable.description }}</p>
+                <button mat-raised-button color="primary">
+                    Más Información
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
