@@ -18,12 +18,18 @@
                 class="inflable-card"
                 *ngFor="let inflable of selectedCategory.inflables"
             >
-                <img [src]="inflable.image" [alt]="inflable.name" />
-                <h3>{{ inflable.name }}</h3>
-                <p>{{ inflable.description }}</p>
-                <button mat-raised-button color="primary">
-                    Más Información
-                </button>
+                <div class="card-image-wrapper">
+                    <img [src]="inflable.image" [alt]="inflable.name" />
+                </div>
+                <div class="card-content">
+                    <h3>{{ inflable.name }}</h3>
+                    <p>{{ inflable.description }}</p>
+                </div>
+                <div class="card-actions">
+                    <button mat-raised-button color="primary">
+                        Más Información
+                    </button>
+                </div>
             </div>
         </div>
     </div>

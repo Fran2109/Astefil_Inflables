@@ -38,11 +38,11 @@ export class InflablesComponent {
     {
       name: 'Juegos',
       inflables: [
-        { name: 'Metegol', description: 'Juego de metegol inflable para divertirse en grupo.', image: 'assets/inflables/metegol/1.jpeg' },
+        { name: 'Metegol', description: 'Juego de metegol inflable para divertirse en grupo.', image: 'assets/inflables/metegol/1.jpg' },
         { name: 'Tejo', description: 'Juego de tejo inflable, ideal para cualquier edad.', image: 'assets/inflables/tejo/1.jpeg' },
-        { name: 'Sapo', description: 'Juego inflable del sapo, clásico y divertido.', image: 'assets/inflables/sapo/1.jpeg' },
-        { name: 'Pool', description: 'Mesa de pool inflable, diversión garantizada.', image: 'assets/inflables/pool/1.jpeg' },
-        { name: 'Ping Pong', description: 'Mesa de ping pong inflable para competencias amistosas.', image: 'assets/inflables/ping_pong/1.jpeg' },
+        { name: 'Sapo', description: 'Juego inflable del sapo, clásico y divertido.', image: 'assets/inflables/sapo/1.jpg' },
+        { name: 'Pool', description: 'Mesa de pool inflable, diversión garantizada.', image: 'assets/inflables/pool/1.jpg' },
+        { name: 'Ping Pong', description: 'Mesa de ping pong inflable para competencias amistosas.', image: 'assets/inflables/ping_pong/1.jpg' },
         { name: 'Yenga', description: 'Juego de Yenga inflable, diversión y equilibrio.', image: 'assets/inflables/yenga/1.jpeg' }
       ]
     }
