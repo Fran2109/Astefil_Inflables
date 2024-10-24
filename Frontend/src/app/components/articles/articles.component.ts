@@ -9,9 +9,9 @@ import { CategoryService } from 'src/app/services/category/category.service';
 })
 export class ArticlesComponent implements OnInit {
   loadingCategories: boolean = true;
-  loadingInflables: boolean = true;
+  loadingArticles: boolean = true;
   categories: any[] = [];
-  inflables: any[] = [];
+  articles: any[] = [];
   selectedCategory: any;
 
   constructor(private articleService: ArticleService, private categoryService: CategoryService) { }
@@ -28,12 +28,12 @@ export class ArticlesComponent implements OnInit {
   }
 
   selectCategory(category: any) {
-    this.loadingInflables = true;
+    this.loadingArticles = true;
     this.selectedCategory = category;
     setTimeout(() => {
-      this.inflables = this.articleService.getArticlesByCategoryId(category.id);
-      this.loadingInflables = false;
+      this.articles = this.articleService.getArticlesByCategoryId(category.id);
+      this.loadingArticles = false;
     }, 1000);
-    this.loadingInflables = false;
+    this.loadingArticles = false;
   }
 }

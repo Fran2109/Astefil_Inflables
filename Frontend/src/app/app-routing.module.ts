@@ -6,7 +6,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
-  { path: 'inflables', component: ArticlesComponent }
+  { path: 'articles', component: ArticlesComponent }
 ];
 
 @NgModule({

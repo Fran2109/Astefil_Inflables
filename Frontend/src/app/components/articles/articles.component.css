@@ -18,11 +18,11 @@
     }
 }
 
-.inflables-section {
+.articles-section {
     padding: 40px;
 }
 
-.inflables-container {
+.articles-container {
     display: flex;
 }
 
@@ -56,16 +56,16 @@
     background-color: #e0e0e0;
 }
 
-.inflables-list {
+.articles-list {
     width: 75%;
 }
 
-.inflables-list h2 {
+.articles-list h2 {
     font-size: 28px;
     margin-bottom: 20px;
 }
 
-.inflable-card {
+.article-card {
     display: inline-block;
     width: 300px;
     margin: 20px;
@@ -76,7 +76,7 @@
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.inflable-card:hover {
+.article-card:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
