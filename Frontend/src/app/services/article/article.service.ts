@@ -23,7 +23,10 @@ export class ArticleService {
       images: [
         'assets/inflables/rampa_acuatica_arco/1.jpeg',
         'assets/inflables/rampa_acuatica_arco/2.jpeg',
-        'assets/inflables/rampa_acuatica_arco/3.jpeg'
+        'assets/inflables/rampa_acuatica_arco/3.jpeg',
+        'assets/inflables/rampa_acuatica_arco/4.jpeg',
+        'assets/inflables/rampa_acuatica_arco/5.jpeg',
+        'assets/inflables/rampa_acuatica_arco/6.jpeg'
       ],
       categoryId: 1
     },
@@ -34,7 +37,8 @@ export class ArticleService {
       images: [
         'assets/inflables/rampa_acuatica/1.jpeg',
         'assets/inflables/rampa_acuatica/2.jpeg',
-        'assets/inflables/rampa_acuatica/3.jpeg'
+        'assets/inflables/rampa_acuatica/3.jpeg',
+        'assets/inflables/rampa_acuatica/4.jpeg'
       ],
       categoryId: 1
     },
@@ -45,7 +49,12 @@ export class ArticleService {
       images: [
         'assets/inflables/tobogan_acuatico/1.jpeg',
         'assets/inflables/tobogan_acuatico/2.jpeg',
-        'assets/inflables/tobogan_acuatico/3.jpeg'
+        'assets/inflables/tobogan_acuatico/3.jpeg',
+        'assets/inflables/tobogan_acuatico/4.jpeg',
+        'assets/inflables/tobogan_acuatico/5.jpeg',
+        'assets/inflables/tobogan_acuatico/6.jpeg',
+        'assets/inflables/tobogan_acuatico/7.jpeg',
+        'assets/inflables/tobogan_acuatico/8.jpeg'
       ],
       categoryId: 1
     },
@@ -56,7 +65,11 @@ export class ArticleService {
       images: [
         'assets/inflables/demoledor/1.jpeg',
         'assets/inflables/demoledor/2.jpeg',
-        'assets/inflables/demoledor/3.jpeg'
+        'assets/inflables/demoledor/3.jpeg',
+        'assets/inflables/demoledor/4.jpeg',
+        'assets/inflables/demoledor/5.jpeg',
+        'assets/inflables/demoledor/6.jpeg',
+        'assets/inflables/demoledor/7.jpeg'
       ],
       categoryId: 2
     },
@@ -67,7 +80,8 @@ export class ArticleService {
       images: [
         'assets/inflables/arcoiris/1.jpeg',
         'assets/inflables/arcoiris/2.jpeg',
-        'assets/inflables/arcoiris/3.jpeg'
+        'assets/inflables/arcoiris/3.jpeg',
+        'assets/inflables/arcoiris/4.jpeg'
       ],
       categoryId: 2
     },
@@ -78,7 +92,10 @@ export class ArticleService {
       images: [
         'assets/inflables/carrera_de_obstaculos/1.jpeg',
         'assets/inflables/carrera_de_obstaculos/2.jpeg',
-        'assets/inflables/carrera_de_obstaculos/3.jpeg'
+        'assets/inflables/carrera_de_obstaculos/3.jpeg',
+        'assets/inflables/carrera_de_obstaculos/4.jpeg',
+        'assets/inflables/carrera_de_obstaculos/5.jpeg',
+        'assets/inflables/carrera_de_obstaculos/6.jpeg'
       ]
     },
     {
@@ -88,7 +105,8 @@ export class ArticleService {
       images: [
         'assets/inflables/barco_pirata/1.jpeg',
         'assets/inflables/barco_pirata/2.jpeg',
-        'assets/inflables/barco_pirata/3.jpeg'
+        'assets/inflables/barco_pirata/3.jpeg',
+        'assets/inflables/barco_pirata/4.jpeg'
       ],
       categoryId: 2
     },
@@ -142,7 +160,10 @@ export class ArticleService {
       images: [
         'assets/inflables/2x2/1.jpeg',
         'assets/inflables/2x2/2.jpeg',
-        'assets/inflables/2x2/3.jpeg'
+        'assets/inflables/2x2/3.jpeg',
+        'assets/inflables/2x2/4.jpeg',
+        'assets/inflables/2x2/5.jpeg',
+        'assets/inflables/2x2/6.jpeg'
       ],
       categoryId: 3
     },
@@ -153,7 +174,8 @@ export class ArticleService {
       images: [
         'assets/inflables/metegol/1.jpg',
         'assets/inflables/metegol/2.jpg',
-        'assets/inflables/metegol/3.jpg'
+        'assets/inflables/metegol/3.jpg',
+        'assets/inflables/metegol/4.jpg'
       ],
       categoryId: 4
     },
@@ -173,7 +195,11 @@ export class ArticleService {
       images: [
         'assets/inflables/sapo/1.jpg',
         'assets/inflables/sapo/2.jpg',
-        'assets/inflables/sapo/3.jpg'
+        'assets/inflables/sapo/3.jpg',
+        'assets/inflables/sapo/4.jpg',
+        'assets/inflables/sapo/5.jpg',
+        'assets/inflables/sapo/6.jpg',
+        'assets/inflables/sapo/7.jpeg'
       ],
       categoryId: 4
     },
@@ -184,7 +210,8 @@ export class ArticleService {
       images: [
         'assets/inflables/pool/1.jpg',
         'assets/inflables/pool/2.jpg',
-        'assets/inflables/pool/3.jpg'
+        'assets/inflables/pool/3.jpg',
+        'assets/inflables/pool/4.jpg'
       ],
       categoryId: 4
     },
@@ -195,7 +222,10 @@ export class ArticleService {
       images: [
         'assets/inflables/ping_pong/1.jpg',
         'assets/inflables/ping_pong/2.jpg',
-        'assets/inflables/ping_pong/3.jpg'
+        'assets/inflables/ping_pong/3.jpg',
+        'assets/inflables/ping_pong/4.jpg',
+        'assets/inflables/ping_pong/5.jpg',
+        'assets/inflables/ping_pong/6.jpg'
       ],
       categoryId: 4
     },
@@ -206,7 +236,10 @@ export class ArticleService {
       images: [
         'assets/inflables/yenga/1.jpeg',
         'assets/inflables/yenga/2.jpeg',
-        'assets/inflables/yenga/3.jpeg'
+        'assets/inflables/yenga/3.jpeg',
+        'assets/inflables/yenga/4.jpeg',
+        'assets/inflables/yenga/5.jpeg',
+        'assets/inflables/yenga/6.jpeg'
       ],
       categoryId: 4
     }
