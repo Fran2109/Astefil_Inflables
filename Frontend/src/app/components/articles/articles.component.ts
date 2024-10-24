@@ -7,7 +7,7 @@ import { CategoryService } from 'src/app/services/category/category.service';
   templateUrl: './articles.component.html',
   styleUrls: ['./articles.component.css']
 })
-export class InflablesComponent implements OnInit {
+export class ArticlesComponent implements OnInit {
   loadingCategories: boolean = true;
   loadingInflables: boolean = true;
   categories: any[] = [];

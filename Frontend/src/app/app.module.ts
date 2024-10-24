@@ -13,7 +13,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
-import { InflablesComponent } from './components/articles/articles.component';
+import { ArticlesComponent } from './components/articles/articles.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,7 @@ import { InflablesComponent } from './components/articles/articles.component';
     HeaderComponent,
     FooterComponent,
     LandingPageComponent,
-    InflablesComponent,
+    ArticlesComponent,
   ],
   imports: [
     BrowserModule,
