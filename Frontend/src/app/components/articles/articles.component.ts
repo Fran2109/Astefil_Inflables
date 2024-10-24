@@ -8,6 +8,8 @@ import { CategoryService } from 'src/app/services/category/category.service';
   styleUrls: ['./articles.component.css']
 })
 export class InflablesComponent implements OnInit {
+  loadingCategories: boolean = true;
+  loadingInflables: boolean = true;
   categories: any[] = [];
   inflables: any[] = [];
   selectedCategory: any;
@@ -15,14 +17,23 @@ export class InflablesComponent implements OnInit {
   constructor(private articleService: ArticleService, private categoryService: CategoryService) { }
 
   ngOnInit() {
-    this.categoryService.getCategories().subscribe((categories: any[]) => {
-      this.categories = categories;
-      this.selectCategory(this.categories[0]);
-    });
+    this.loadingCategories = true;
+    setTimeout(() => {
+      this.categoryService.getCategories().subscribe((categories: any[]) => {
+        this.categories = categories;
+        this.selectCategory(this.categories[0]);
+        this.loadingCategories = false;
+      });
+    }, 1000);
   }
 
   selectCategory(category: any) {
+    this.loadingInflables = true;
     this.selectedCategory = category;
-    this.inflables = this.articleService.getArticlesByCategoryId(category.id);
+    setTimeout(() => {
+      this.inflables = this.articleService.getArticlesByCategoryId(category.id);
+      this.loadingInflables = false;
+    }, 1000);
+    this.loadingInflables = false;
   }
 }

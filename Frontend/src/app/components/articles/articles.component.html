@@ -1,37 +1,40 @@
 <section class="inflables-section">
-    <div class="inflables-container">
-        <div class="categories-sidebar">
-            <h3>Categorías</h3>
-            <ul>
-                <li
-                    *ngFor="let category of categories"
-                    (click)="selectCategory(category)"
-                    [class.active]="category.id === selectedCategory?.id"
-                >
-                    {{ category.name }}
-                </li>
-            </ul>
-        </div>
-        <div class="inflables-list">
-            <h2>{{ selectedCategory?.name }}</h2>
-            <div class="inflable-card" *ngFor="let inflable of inflables">
-                <div class="card-image-wrapper">
-                    <img [src]="inflable.images[0]" [alt]="inflable.name" />
-                </div>
-                <div class="card-content">
-                    <h3>{{ inflable.name }}</h3>
-                    <p>{{ inflable.description }}</p>
-                </div>
-                <div class="card-actions">
-                    <button
-                        mat-raised-button
-                        color="primary"
-                        class="mat-elevation-z4"
+    <div *ngIf="loadingInflables; else inflablesContent" class="loader"></div>
+    <ng-template #inflablesContent>
+        <div class="inflables-container">
+            <div class="categories-sidebar">
+                <h3>Categorías</h3>
+                <ul>
+                    <li
+                        *ngFor="let category of categories"
+                        (click)="selectCategory(category)"
+                        [class.active]="category.id === selectedCategory?.id"
                     >
-                        Más Información
-                    </button>
+                        {{ category.name }}
+                    </li>
+                </ul>
+            </div>
+            <div class="inflables-list">
+                <h2>{{ selectedCategory?.name }}</h2>
+                <div class="inflable-card" *ngFor="let inflable of inflables">
+                    <div class="card-image-wrapper">
+                        <img [src]="inflable.images[0]" [alt]="inflable.name" />
+                    </div>
+                    <div class="card-content">
+                        <h3>{{ inflable.name }}</h3>
+                        <p>{{ inflable.description }}</p>
+                    </div>
+                    <div class="card-actions">
+                        <button
+                            mat-raised-button
+                            color="primary"
+                            class="mat-elevation-z4"
+                        >
+                            Más Información
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </ng-template>
 </section>
