@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ArticleService } from 'src/app/services/article/article.service';
 import { CategoryService } from 'src/app/services/category/category.service';
 
@@ -14,7 +15,8 @@ export class ArticlesComponent implements OnInit {
   articles: any[] = [];
   selectedCategory: any;
 
-  constructor(private articleService: ArticleService, private categoryService: CategoryService) { }
+
+  constructor(private articleService: ArticleService, private categoryService: CategoryService, private router: Router) { }
 
   ngOnInit() {
     this.loadingCategories = true;
@@ -36,4 +38,9 @@ export class ArticlesComponent implements OnInit {
     }, 1000);
     this.loadingArticles = false;
   }
+
+  viewDetails(articleId: number) {
+    this.router.navigate(['/articles', articleId]);
+  }
+
 }

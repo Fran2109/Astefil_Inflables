@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { ArticlesComponent } from './components/articles/articles.component';
+import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
     FooterComponent,
     LandingPageComponent,
     ArticlesComponent,
+    ArticleDetailComponent,
   ],
   imports: [
     BrowserModule,

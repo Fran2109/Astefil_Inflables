@@ -1,0 +1,13 @@
+<section *ngIf="article" class="article-detail-section">
+    <div class="article-detail-container">
+        <h2>{{ article.name }}</h2>
+        <p>{{ article.description }}</p>
+        <div class="article-images">
+            <img
+                *ngFor="let image of article.images"
+                [src]="image"
+                [alt]="article.name"
+            />
+        </div>
+    </div>
+</section>
