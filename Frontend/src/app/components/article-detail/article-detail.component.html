@@ -10,12 +10,16 @@
     <div class="article-detail-container">
         <h2>{{ selectedArticle.name }}</h2>
         <p>{{ selectedArticle.description }}</p>
-        <div class="article-images">
-            <img
-                *ngFor="let image of selectedArticle.images"
-                [src]="image"
-                [alt]="selectedArticle.name"
-            />
-        </div>
+        <owl-carousel-o [options]="carouselOptions">
+            <ng-container *ngFor="let image of selectedArticle.images">
+                <ng-template carouselSlide>
+                    <img
+                        [src]="image"
+                        [alt]="selectedArticle.name"
+                        class="carousel-image"
+                    />
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
     </div>
 </section>

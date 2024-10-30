@@ -11,6 +11,17 @@ import { ArticleService } from 'src/app/services/article/article.service';
 })
 export class ArticleDetailComponent implements OnInit {
   selectedArticle!: Article | null;
+  carouselOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 700,
+    navText: ['<', '>'],
+    items: 1,
+    nav: true
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -25,19 +36,6 @@ export class ArticleDetailComponent implements OnInit {
   getGame(): void {
     const id = Number(this.route.snapshot.paramMap.get("id"));
     this.selectedArticle = this.articleService.getArticleById(id);
-    /* this.articleService.getArticleById(id).subscribe(
-      (article) => {
-        if (article) {
-          this.selectedArticle = article;
-        }
-      },
-      (error) => {
-        if (error.status === 404) {
-          this.router.navigate(["/404"]);
-        }
-        return throwError(error);
-      }
-    ); */
   }
 
   goBack() {
