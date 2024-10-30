@@ -17,6 +17,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     MatIconModule,
     MatDividerModule,
     CarouselModule,
+    MatDialogModule,
   ],
   providers: [
     provideAnimationsAsync()

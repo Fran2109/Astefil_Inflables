@@ -17,6 +17,11 @@
                         [src]="image"
                         [alt]="selectedArticle.name"
                         class="carousel-image"
+                        (click)="
+                            selectedArticle.name
+                                ? openImageModal(image, selectedArticle.name)
+                                : null
+                        "
                     />
                 </ng-template>
             </ng-container>

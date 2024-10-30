@@ -28,9 +28,7 @@
 .carousel-image {
     width: 200px;
     height: 400px;
-    /* Puedes ajustar el alto según lo necesites */
     object-fit: cover;
-    /* Hace que la imagen ocupe todo el contenedor, manteniendo la proporción */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
@@ -38,4 +36,29 @@
 
 .carousel-image:hover {
     transform: scale(1.05);
+}
+
+.custom-modal-container .mat-dialog-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 0;
+    overflow: hidden;
+}
+
+.modal-container {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
