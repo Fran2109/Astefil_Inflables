@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Article } from 'src/app/models/Article';
 
 @Injectable({
   providedIn: 'root'
@@ -245,12 +246,12 @@ export class ArticleService {
     }
   ];
 
-  getArticlesByCategoryId(categoryId: number) {
+  getArticlesByCategoryId(categoryId: number): Article[] {
     return this.articles.filter(article => article.categoryId === categoryId);
   }
 
-  getArticleById(articleId: number) {
-    return this.articles.find(article => article.id === articleId);
+  getArticleById(articleId: number): Article | null {
+    return this.articles.find(article => article.id === articleId) || null;
   }
   constructor() { }
 }

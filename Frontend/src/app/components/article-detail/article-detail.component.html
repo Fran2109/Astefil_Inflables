@@ -1,12 +1,20 @@
-<section *ngIf="article" class="article-detail-section">
+<section *ngIf="selectedArticle" class="article-detail-section">
+    <button
+        mat-raised-button
+        color="primary"
+        class="mat-elevation-z4"
+        (click)="goBack()"
+    >
+        Volver a la lista
+    </button>
     <div class="article-detail-container">
-        <h2>{{ article.name }}</h2>
-        <p>{{ article.description }}</p>
+        <h2>{{ selectedArticle.name }}</h2>
+        <p>{{ selectedArticle.description }}</p>
         <div class="article-images">
             <img
-                *ngFor="let image of article.images"
+                *ngFor="let image of selectedArticle.images"
                 [src]="image"
-                [alt]="article.name"
+                [alt]="selectedArticle.name"
             />
         </div>
     </div>

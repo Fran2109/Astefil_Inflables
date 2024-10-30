@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { throwError } from 'rxjs';
+import { Article } from 'src/app/models/Article';
 import { ArticleService } from 'src/app/services/article/article.service';
 
 @Component({
@@ -8,12 +10,37 @@ import { ArticleService } from 'src/app/services/article/article.service';
   styleUrls: ['./article-detail.component.css']
 })
 export class ArticleDetailComponent implements OnInit {
-  article: any;
+  selectedArticle!: Article | null;
 
-  constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private articleService: ArticleService
+  ) { }
 
-  ngOnInit() {
-    const articleId = +this.route.snapshot.paramMap.get('id')!;
-    this.article = this.articleService.getArticleById(articleId);
+  ngOnInit(): void {
+    this.getGame();
+  }
+
+  getGame(): void {
+    const id = Number(this.route.snapshot.paramMap.get("id"));
+    this.selectedArticle = this.articleService.getArticleById(id);
+    /* this.articleService.getArticleById(id).subscribe(
+      (article) => {
+        if (article) {
+          this.selectedArticle = article;
+        }
+      },
+      (error) => {
+        if (error.status === 404) {
+          this.router.navigate(["/404"]);
+        }
+        return throwError(error);
+      }
+    ); */
+  }
+
+  goBack() {
+    this.router.navigate(["/articles", this.selectedArticle?.categoryId]);
   }
 }
