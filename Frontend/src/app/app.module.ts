@@ -15,6 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,11 @@ import { ArticleDetailComponent } from './components/article-detail/article-deta
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
+    CarouselModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

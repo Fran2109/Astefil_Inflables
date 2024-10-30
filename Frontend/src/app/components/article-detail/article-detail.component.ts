@@ -39,6 +39,6 @@ export class ArticleDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(["/articles", this.selectedArticle?.categoryId]);
+    this.router.navigate(["/articles"]);
   }
 }

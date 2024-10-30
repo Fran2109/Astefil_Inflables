@@ -1,13 +1,13 @@
 <section *ngIf="selectedArticle" class="article-detail-section">
-    <button
-        mat-raised-button
-        color="primary"
-        class="mat-elevation-z4"
-        (click)="goBack()"
-    >
-        Volver a la lista
-    </button>
     <div class="article-detail-container">
+        <button
+            mat-raised-button
+            color="primary"
+            class="mat-elevation-z4"
+            (click)="goBack()"
+        >
+            Volver a la lista
+        </button>
         <h2>{{ selectedArticle.name }}</h2>
         <p>{{ selectedArticle.description }}</p>
         <owl-carousel-o [options]="carouselOptions">

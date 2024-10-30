@@ -4,7 +4,7 @@
 }
 
 .article-detail-container {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     background: #fff;
     padding: 20px;
@@ -26,8 +26,11 @@
 }
 
 .carousel-image {
-    width: 100%;
-    height: auto;
+    width: 200px;
+    height: 400px;
+    /* Puedes ajustar el alto según lo necesites */
+    object-fit: cover;
+    /* Hace que la imagen ocupe todo el contenedor, manteniendo la proporción */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
