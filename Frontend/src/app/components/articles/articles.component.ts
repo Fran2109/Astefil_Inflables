@@ -32,10 +32,7 @@ export class ArticlesComponent implements OnInit {
   selectCategory(category: any) {
     this.loadingArticles = true;
     this.selectedCategory = category;
-    setTimeout(() => {
-      this.articles = this.articleService.getArticlesByCategoryId(category.id);
-      this.loadingArticles = false;
-    }, 1000);
+    this.articles = this.articleService.getArticlesByCategoryId(category.id);
     this.loadingArticles = false;
   }
 

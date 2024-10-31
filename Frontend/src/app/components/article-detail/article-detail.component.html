@@ -3,28 +3,69 @@
         <button
             mat-raised-button
             color="primary"
-            class="mat-elevation-z4"
+            class="mat-elevation-z4 back-button"
             (click)="goBack()"
         >
             Volver a la lista
         </button>
-        <h2>{{ selectedArticle.name }}</h2>
-        <p>{{ selectedArticle.description }}</p>
-        <owl-carousel-o [options]="carouselOptions">
-            <ng-container *ngFor="let image of selectedArticle.images">
-                <ng-template carouselSlide>
-                    <img
-                        [src]="image"
-                        [alt]="selectedArticle.name"
-                        class="carousel-image"
-                        (click)="
-                            selectedArticle.name
-                                ? openImageModal(image, selectedArticle.name)
-                                : null
-                        "
-                    />
-                </ng-template>
-            </ng-container>
-        </owl-carousel-o>
+
+        <div class="description-section">
+            <h2>Descripción</h2>
+            <p>{{ selectedArticle.description }}</p>
+        </div>
+
+        <div class="carousel-container">
+            <owl-carousel-o [options]="carouselOptions">
+                <ng-container *ngFor="let image of selectedArticle.images">
+                    <ng-template carouselSlide>
+                        <img
+                            [src]="image"
+                            [alt]="selectedArticle.name"
+                            class="carousel-image"
+                            (click)="
+                                openImageModal(
+                                    image,
+                                    selectedArticle.name || ''
+                                )
+                            "
+                        />
+                    </ng-template>
+                </ng-container>
+            </owl-carousel-o>
+        </div>
+
+        <div
+            class="related-articles-section"
+            *ngIf="relatedArticles.length > 0"
+        >
+            <h3>Productos Relacionados</h3>
+            <div class="related-articles-list">
+                <div
+                    *ngFor="let article of relatedArticles"
+                    class="related-article-card"
+                >
+                    <div class="card-image-wrapper">
+                        <img
+                            [src]="article.images?.[0]"
+                            [alt]="article.name"
+                            class="related-article-image"
+                        />
+                    </div>
+                    <div class="card-content">
+                        <h4>{{ article.name }}</h4>
+                        <button
+                            mat-button
+                            color="accent"
+                            (click)="
+                                article.id !== undefined &&
+                                    viewDetails(article.id)
+                            "
+                        >
+                            Ver Más
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

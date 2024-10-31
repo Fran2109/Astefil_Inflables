@@ -13,6 +13,7 @@ import { ImageModalComponent } from '../image-modal/image-modal.component';
 })
 export class ArticleDetailComponent implements OnInit {
   selectedArticle!: Article | null;
+  relatedArticles: Article[] = [];
   carouselOptions = {
     loop: true,
     mouseDrag: true,
@@ -33,12 +34,24 @@ export class ArticleDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getGame();
+    this.route.params.subscribe(params => {
+      this.getArticle();
+    });
   }
 
-  getGame(): void {
+  getArticle(): void {
     const id = Number(this.route.snapshot.paramMap.get("id"));
     this.selectedArticle = this.articleService.getArticleById(id);
+    if (this.selectedArticle) {
+      if (this.selectedArticle?.categoryId !== undefined) {
+        this.getRelatedArticles(this.selectedArticle.categoryId, id);
+      }
+    }
+  }
+
+  getRelatedArticles(categoryId: number, currentArticleId: number): void {
+    this.relatedArticles = this.articleService.getArticlesByCategoryId(categoryId)
+      .filter(article => article.id !== currentArticleId);
   }
 
   goBack() {
@@ -50,8 +63,13 @@ export class ArticleDetailComponent implements OnInit {
       data: {
         imageUrl: imageUrl,
         altText: altText
-      }, autoFocus: false,
+      },
+      autoFocus: false,
       panelClass: 'custom-modal-container'
     });
+  }
+
+  viewDetails(articleId: number): void {
+    this.router.navigate(["/articles", articleId]);
   }
 }
