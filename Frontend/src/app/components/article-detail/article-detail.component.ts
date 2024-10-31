@@ -5,6 +5,7 @@ import { throwError } from 'rxjs';
 import { Article } from 'src/app/models/Article';
 import { ArticleService } from 'src/app/services/article/article.service';
 import { ImageModalComponent } from '../image-modal/image-modal.component';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-article-detail',
@@ -30,7 +31,8 @@ export class ArticleDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private articleService: ArticleService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private viewportScroller: ViewportScroller
   ) { }
 
   ngOnInit(): void {
@@ -70,6 +72,8 @@ export class ArticleDetailComponent implements OnInit {
   }
 
   viewDetails(articleId: number): void {
-    this.router.navigate(["/articles", articleId]);
+    this.router.navigate(['/articles', articleId]).then(() => {
+      this.viewportScroller.scrollToPosition([0, 0]);
+    });
   }
 }

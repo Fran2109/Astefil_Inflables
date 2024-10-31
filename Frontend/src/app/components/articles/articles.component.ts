@@ -37,7 +37,7 @@ export class ArticlesComponent implements OnInit {
   }
 
   viewDetails(articleId: number) {
-    this.router.navigate(['/articles', articleId]);
+    this.router.navigate(['/articles', articleId])
   }
 
 }

@@ -97,7 +97,8 @@ export class ArticleService {
         'assets/inflables/carrera_de_obstaculos/4.jpeg',
         'assets/inflables/carrera_de_obstaculos/5.jpeg',
         'assets/inflables/carrera_de_obstaculos/6.jpeg'
-      ]
+      ],
+      categoryId: 2
     },
     {
       id: 8,
