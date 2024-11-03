@@ -1,11 +1,14 @@
 package com.Astefil_Inflables.Catalogo.Backend.models;
 
+import com.Astefil_Inflables.Catalogo.Backend.models.Article;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.NotBlank;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -24,6 +27,10 @@ public class Category {
     @NotNull(message = "Order Number cannot be null")
     @Min(value = 1, message = "Order Number must be greater than 0")
     private Integer orderNumber;
+
+    @OneToMany(mappedBy = "category", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<Article> articles = new ArrayList<>();
 
     public Category(){
 
