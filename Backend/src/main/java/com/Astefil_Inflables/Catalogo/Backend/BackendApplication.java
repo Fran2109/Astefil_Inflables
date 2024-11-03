@@ -2,9 +2,11 @@ package com.Astefil_Inflables.Catalogo.Backend;
 
 import com.Astefil_Inflables.Catalogo.Backend.models.Article;
 import com.Astefil_Inflables.Catalogo.Backend.models.Category;
+import com.Astefil_Inflables.Catalogo.Backend.models.Zone;
 import com.Astefil_Inflables.Catalogo.Backend.services.ArticleServiceImpl;
 import com.Astefil_Inflables.Catalogo.Backend.services.interfaces.IArticleService;
 import com.Astefil_Inflables.Catalogo.Backend.services.interfaces.ICategoryService;
+import com.Astefil_Inflables.Catalogo.Backend.services.interfaces.IZoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,7 +21,7 @@ public class BackendApplication {
 	}
 
 	@Bean
-	CommandLineRunner run(@Autowired ICategoryService categoryService, @Autowired IArticleService articleService) {
+	CommandLineRunner run(@Autowired ICategoryService categoryService, @Autowired IArticleService articleService, @Autowired IZoneService zoneService){
 		return args -> {
 			// Create default categories
 			Category acuaticosCategory = categoryService.createCategory("Acuaticos");
@@ -53,6 +55,19 @@ public class BackendApplication {
 			Article pool = articleService.createArticle("Pool", "Pool", (float) 1, (float) 1, (float) 1, juegosCategory);
 			Article pingPong = articleService.createArticle("Ping pong", "Ping pong", (float) 1, (float) 1, (float) 1, juegosCategory);
 			Article yenga = articleService.createArticle("Yenga", "Yenga", (float) 1, (float) 1, (float) 1, juegosCategory);
+
+			// Create default zones
+			zoneService.createZone("Tortuguitas");
+			zoneService.createZone("Grand Bourg");
+			zoneService.createZone("Tierras Altas");
+			zoneService.createZone("Pablo Nogués");
+			zoneService.createZone("Los Polvorines");
+			zoneService.createZone("Villa de Mayo");
+			zoneService.createZone("Manuel Alberti");
+			zoneService.createZone("Del Viso");
+			zoneService.createZone("Ingeniero Adolfo Sourdeaux");
+			zoneService.createZone("José C. Paz");
+			zoneService.createZone("Villa Rosa");
 		};
 	}
 }
