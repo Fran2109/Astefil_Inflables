@@ -1,14 +1,12 @@
 package com.Astefil_Inflables.Catalogo.Backend.models;
 
-import com.Astefil_Inflables.Catalogo.Backend.models.Category;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -50,6 +48,10 @@ public class Article {
     @JsonBackReference
     private Category category;
 
+    @OneToMany(mappedBy = "article")
+    @JsonManagedReference
+    private List<Image> images;
+
     public Article(){
 
     }
@@ -61,6 +63,16 @@ public class Article {
         this.width = width;
         this.length = length;
         this.category = category;
+    }
+
+    public Article(String name, String description, Float height, Float width, Float length, Category category, List<Image> images){
+        this.name = name;
+        this.description = description;
+        this.height = height;
+        this.width = width;
+        this.length = length;
+        this.category = category;
+        this.images = images;
     }
 
     public Long getId(){
@@ -96,5 +108,11 @@ public class Article {
     }
     public void setCategory(Category category){
         this.category = category;
+    }
+    public List<Image> getImages(){
+        return images;
+    }
+    public void setImages(List<Image> images){
+        this.images = images;
     }
 }

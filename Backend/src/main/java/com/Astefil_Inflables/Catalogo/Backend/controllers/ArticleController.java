@@ -31,7 +31,7 @@ public class ArticleController {
 
     @PostMapping(path = "")
     public Article createArticle(@ModelAttribute @Valid @NotNull CreateArticleDTO article) {
-        return this.articleService.createArticle(article.getName(), article.getDescription(), article.getHeight(), article.getWidth(), article.getLength(), article.getIdCategory());
+        return this.articleService.createArticle(article.getName(), article.getDescription(), article.getHeight(), article.getWidth(), article.getLength(), article.getIdCategory(), article.getImages());
     }
 
     @PutMapping(path = "/{id}")
