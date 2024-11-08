@@ -1,11 +1,10 @@
 package com.Astefil_Inflables.Catalogo.Backend;
 
-import com.Astefil_Inflables.Catalogo.Backend.models.Article;
-import com.Astefil_Inflables.Catalogo.Backend.models.Category;
-import com.Astefil_Inflables.Catalogo.Backend.models.Zone;
+import com.Astefil_Inflables.Catalogo.Backend.models.*;
 import com.Astefil_Inflables.Catalogo.Backend.services.ArticleServiceImpl;
 import com.Astefil_Inflables.Catalogo.Backend.services.interfaces.IArticleService;
 import com.Astefil_Inflables.Catalogo.Backend.services.interfaces.ICategoryService;
+import com.Astefil_Inflables.Catalogo.Backend.services.interfaces.IUserService;
 import com.Astefil_Inflables.Catalogo.Backend.services.interfaces.IZoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -21,8 +20,18 @@ public class BackendApplication {
 	}
 
 	@Bean
-	CommandLineRunner run(@Autowired ICategoryService categoryService, @Autowired IArticleService articleService, @Autowired IZoneService zoneService){
+	CommandLineRunner run(@Autowired IUserService userService, @Autowired ICategoryService categoryService, @Autowired IArticleService articleService, @Autowired IZoneService zoneService){
 		return args -> {
+			// Create default roles
+			Role admin = new Role("ADMIN");
+			Role employee = new Role("EMPLOYEE");
+			userService.createRole(admin);
+			userService.createRole(employee);
+
+			// Create default users
+			User userAdmin = userService.createUser(new User("useradmin", "pass123", admin));
+			User userEmployee = userService.createUser(new User("useremployee", "pass123", employee));
+
 			// Create default categories
 			Category acuaticosCategory = categoryService.createCategory("Acuaticos");
 			Category gigantesCategory = categoryService.createCategory("Gigantes");
