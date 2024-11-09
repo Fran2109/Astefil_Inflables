@@ -43,18 +43,21 @@ export class ArticleDetailComponent implements OnInit {
 
   getArticle(): void {
     const id = Number(this.route.snapshot.paramMap.get("id"));
-    this.selectedArticle = this.articleService.getArticleById(id);
-    if (this.selectedArticle) {
-      if (this.selectedArticle?.categoryId !== undefined) {
-        this.getRelatedArticles(this.selectedArticle.categoryId, id);
+    this.articleService.getArticleById(id).subscribe(article => {
+      this.selectedArticle = article;
+
+      if (article.id !== undefined) {
+        this.getRelatedArticles(article.id);
       }
-    }
+    })
   }
 
-  getRelatedArticles(categoryId: number, currentArticleId: number): void {
-    this.relatedArticles = this.articleService.getArticlesByCategoryId(categoryId)
-      .filter(article => article.id !== currentArticleId);
+  getRelatedArticles(currentArticleId: number): void {
+    this.articleService.getRelatedArticles(currentArticleId).subscribe(articles => {
+      this.relatedArticles = articles;
+    })
   }
+
 
   goBack() {
     this.router.navigate(["/articles"]);

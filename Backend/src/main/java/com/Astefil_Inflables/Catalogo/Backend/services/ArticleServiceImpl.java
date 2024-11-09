@@ -118,4 +118,11 @@ public class ArticleServiceImpl implements IArticleService {
         Category category = this.categoryService.getCategoryById(id);
         return this.articleRepository.findByCategory(category);
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Article> getRelatedArticles(Long id) {
+        Article article = this.getArticleById(id);
+        return this.getArticlesByCategory(article.getCategory().getId());
+    }
 }

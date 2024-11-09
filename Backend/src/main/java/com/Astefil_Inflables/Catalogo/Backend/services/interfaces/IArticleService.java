@@ -19,4 +19,5 @@ public interface IArticleService {
     Article updateArticle(Long id, String name, String description, Float height, Float width, Float lenght, Long idCategory);
     void deleteArticle(Long id);
     List<Article> getArticlesByCategory(Long id);
+    List<Article> getRelatedArticles(Long id);
 }

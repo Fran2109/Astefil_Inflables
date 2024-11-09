@@ -1,6 +1,7 @@
 package com.Astefil_Inflables.Catalogo.Backend.models;
 
 import com.Astefil_Inflables.Catalogo.Backend.models.Article;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
@@ -29,7 +30,7 @@ public class Category {
     private Integer orderNumber;
 
     @OneToMany(mappedBy = "category", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.LAZY)
-    @JsonManagedReference
+    @JsonIgnore
     private List<Article> articles = new ArrayList<>();
 
     public Category(){

@@ -49,4 +49,9 @@ public class ArticleController {
     public List<Article> getArticlesByCategory(@PathVariable Long id) {
         return this.articleService.getArticlesByCategory(id);
     }
+
+    @GetMapping(path="/related/{id}")
+    public List<Article> getRelatedArticles(@PathVariable Long id){
+        return this.articleService.getRelatedArticles(id).stream().filter(article -> !article.getId().equals(id)).toList();
+    }
 }

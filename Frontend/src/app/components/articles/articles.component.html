@@ -1,5 +1,5 @@
 <section class="articles-section">
-    <div *ngIf="loadingArticles; else articlesContent" class="loader"></div>
+    <div *ngIf="loading; else articlesContent" class="loader"></div>
     <ng-template #articlesContent>
         <div class="articles-container">
             <div class="categories-sidebar">
@@ -18,7 +18,10 @@
                 <h2>{{ selectedCategory?.name }}</h2>
                 <div class="article-card" *ngFor="let article of articles">
                     <div class="card-image-wrapper">
-                        <img [src]="article.images[0]" [alt]="article.name" />
+                        <img
+                            [src]="returnFirstImage(article)"
+                            [alt]="article.name"
+                        />
                     </div>
                     <div class="card-content">
                         <h3>{{ article.name }}</h3>

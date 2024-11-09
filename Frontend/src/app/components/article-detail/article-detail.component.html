@@ -24,7 +24,7 @@
                             class="carousel-image"
                             (click)="
                                 openImageModal(
-                                    image,
+                                    image.name || '',
                                     selectedArticle.name || ''
                                 )
                             "
