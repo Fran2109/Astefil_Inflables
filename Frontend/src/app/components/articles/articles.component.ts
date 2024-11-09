@@ -10,6 +10,7 @@ import { ConfirmDeleteCategoryComponent } from '../confirm-delete-category/confi
 import { EditCategoryComponent } from '../edit-category/edit-category.component';
 import { CreateArticleComponent } from '../create-article/create-article.component';
 import { ConfirmDeleteArticleComponent } from '../confirm-delete-article/confirm-delete-article.component';
+import { EditArticleComponent } from '../edit-article/edit-article.component';
 
 @Component({
   selector: 'app-articles',
@@ -135,4 +136,18 @@ export class ArticlesComponent implements OnInit {
       }
     });
   }
+
+  openEditArticleModal(articleId: number): void {
+    const dialogRef = this.dialog.open(EditArticleComponent, {
+      width: '500px',
+      data: { articleId: articleId, idCategory: this.selectedCategory.id }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.ngOnInit();
+      }
+    });
+  }
+
 }

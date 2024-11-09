@@ -69,4 +69,7 @@ export class ApiService {
     return this.http.delete<void>(`${this._baseUrl}article/${articleId}`);
   }
 
+  updateArticle(articleId: number, articleData: Article): Observable<Article> {
+    return this.http.put<Article>(`${this._baseUrl}article/${articleId}`, articleData);
+  }
 }

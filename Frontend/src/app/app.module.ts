@@ -35,6 +35,9 @@ import { ConfirmDeleteCategoryComponent } from './components/confirm-delete-cate
 import { EditCategoryComponent } from './components/edit-category/edit-category.component';
 import { CreateArticleComponent } from './components/create-article/create-article.component';
 import { ConfirmDeleteArticleComponent } from './components/confirm-delete-article/confirm-delete-article.component';
+import { EditArticleComponent } from './components/edit-article/edit-article.component';
+
+
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import { ConfirmDeleteArticleComponent } from './components/confirm-delete-artic
     ConfirmDeleteCategoryComponent,
     EditCategoryComponent,
     CreateArticleComponent,
-    ConfirmDeleteArticleComponent
+    ConfirmDeleteArticleComponent,
+    EditArticleComponent
   ],
   imports: [
     BrowserModule,

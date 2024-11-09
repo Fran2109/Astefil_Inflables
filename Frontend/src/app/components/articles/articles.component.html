@@ -79,10 +79,16 @@
                         <button
                             mat-raised-button
                             color="primary"
-                            class="mat-elevation-z4"
                             (click)="viewDetails(article.id)"
                         >
                             Más Información
+                        </button>
+                        <button
+                            mat-raised-button
+                            color="accent"
+                            (click)="openEditArticleModal(article.id)"
+                        >
+                            Editar
                         </button>
                         <button
                             mat-raised-button

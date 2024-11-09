@@ -50,4 +50,9 @@ export class ArticleService {
     return this.apiService.deleteArticle(articleId);
   }
 
+  updateArticle(articleId: number, articleData: Article): Observable<Article> {
+    return this.apiService.updateArticle(articleId, articleData);
+  }
+
+
 }

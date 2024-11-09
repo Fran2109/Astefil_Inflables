@@ -1,0 +1,51 @@
+<h2 mat-dialog-title class="modal-title">Editar Artículo</h2>
+<form
+    [formGroup]="editArticleForm"
+    (ngSubmit)="onSubmit()"
+    class="article-form"
+>
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre del Artículo</mat-label>
+        <input matInput formControlName="name" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="description" required></textarea>
+    </mat-form-field>
+
+    <div class="dimensions-section">
+        <mat-form-field appearance="outline">
+            <mat-label>Altura</mat-label>
+            <input matInput type="number" formControlName="height" required />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Ancho</mat-label>
+            <input matInput type="number" formControlName="width" required />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Largo</mat-label>
+            <input matInput type="number" formControlName="length" required />
+        </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions class="dialog-actions">
+        <button
+            mat-button
+            type="button"
+            (click)="onCancel()"
+            class="cancel-button"
+        >
+            Cancelar
+        </button>
+        <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="editArticleForm.invalid"
+            class="submit-button"
+        >
+            Guardar Cambios
+        </button>
+    </div>
+</form>
