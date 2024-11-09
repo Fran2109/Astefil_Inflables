@@ -45,4 +45,9 @@ export class ArticleService {
   addArticle(articleData: FormData): Observable<Article> {
     return this.apiService.addArticle(articleData);
   }
+
+  deleteArticle(articleId: number): Observable<void> {
+    return this.apiService.deleteArticle(articleId);
+  }
+
 }

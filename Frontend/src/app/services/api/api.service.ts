@@ -64,4 +64,9 @@ export class ApiService {
   addArticle(articleData: FormData): Observable<Article> {
     return this.http.post<Article>(`${this._baseUrl}article`, articleData);
   }
+
+  deleteArticle(articleId: number): Observable<void> {
+    return this.http.delete<void>(`${this._baseUrl}article/${articleId}`);
+  }
+
 }

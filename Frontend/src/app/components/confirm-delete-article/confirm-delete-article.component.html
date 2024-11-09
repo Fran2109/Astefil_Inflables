@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Eliminar Artículo</h2>
+<div mat-dialog-content>
+    <p>¿Estás seguro de que deseas eliminar el siguiente artículo?</p>
+    <div class="article-info">
+        <strong>Nombre:</strong> {{ data.name }}
+        <br />
+        <strong>Descripción:</strong> {{ data.description }}
+    </div>
+</div>
+<div mat-dialog-actions align="end">
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-raised-button color="warn" (click)="onConfirm()">
+        Eliminar
+    </button>
+</div>

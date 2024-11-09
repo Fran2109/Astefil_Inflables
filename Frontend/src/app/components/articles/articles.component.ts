@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDeleteCategoryComponent } from '../confirm-delete-category/confirm-delete-category.component';
 import { EditCategoryComponent } from '../edit-category/edit-category.component';
 import { CreateArticleComponent } from '../create-article/create-article.component';
+import { ConfirmDeleteArticleComponent } from '../confirm-delete-article/confirm-delete-article.component';
 
 @Component({
   selector: 'app-articles',
@@ -117,4 +118,21 @@ export class ArticlesComponent implements OnInit {
     });
   }
 
+  openDeleteArticleModal(articleId: number, articleName: string, articleDescription: string): void {
+    const dialogRef = this.dialog.open(ConfirmDeleteArticleComponent, {
+      width: '300px',
+      data: {
+        name: articleName,
+        description: articleDescription
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.articleService.deleteArticle(articleId).subscribe(() => {
+          this.ngOnInit();
+        });
+      }
+    });
+  }
 }

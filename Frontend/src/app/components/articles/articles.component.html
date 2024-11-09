@@ -84,6 +84,19 @@
                         >
                             Más Información
                         </button>
+                        <button
+                            mat-raised-button
+                            color="warn"
+                            (click)="
+                                openDeleteArticleModal(
+                                    article.id,
+                                    article.name,
+                                    article.description
+                                )
+                            "
+                        >
+                            Eliminar
+                        </button>
                     </div>
                 </div>
             </div>
