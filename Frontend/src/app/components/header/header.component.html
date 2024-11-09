@@ -16,6 +16,19 @@
                 <a mat-tab-link routerLink="/contacto" routerLinkActive="active"
                     >Contacto</a
                 >
+                <a
+                    *ngIf="!isLoggedIn"
+                    mat-tab-link
+                    routerLink="/login"
+                    routerLinkActive="active"
+                    >Log In</a
+                >
+                <button *ngIf="isLoggedIn" mat-tab-link>
+                    {{ username }}
+                </button>
+                <button *ngIf="isLoggedIn" mat-tab-link (click)="logout()">
+                    Log Out
+                </button>
             </nav>
         </div>
     </mat-toolbar>

@@ -33,8 +33,8 @@ public class BackendApplication {
 			userService.createRole(employee);
 
 			// Create default users
-			User userAdmin = userService.createUser(new User("useradmin", "pass123", admin));
-			User userEmployee = userService.createUser(new User("useremployee", "pass123", employee));
+			User userAdmin = userService.createUser(new User("useradmin@gmail.com", "pass123", admin));
+			User userEmployee = userService.createUser(new User("useremployee@gmail.com", "pass123", employee));
 
 			// Create default categories
 			Category acuaticosCategory = categoryService.createCategory("Acuaticos");

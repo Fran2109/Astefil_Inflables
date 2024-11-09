@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Article } from 'src/app/models/Article';
 import { Category } from 'src/app/models/Category';
+import { ResponseLoginDTO } from 'src/app/models/ResponseLoginDTO';
+import { User } from 'src/app/models/User';
 
 @Injectable({
   providedIn: 'root'
@@ -72,4 +74,24 @@ export class ApiService {
   updateArticle(articleId: number, articleData: Article): Observable<Article> {
     return this.http.put<Article>(`${this._baseUrl}article/${articleId}`, articleData);
   }
+
+  getToken(): string | null {
+    return localStorage.getItem("token") || null;
+  }
+
+  getAuthHeader(): object {
+    return { headers: { Authorization: "Bearer " + this.getToken() } };
+  }
+
+  login(username: string, password: string): Observable<ResponseLoginDTO> {
+    return this.http.post<ResponseLoginDTO>(this._baseUrl + "auth/login", {
+      username: username,
+      password: password,
+    });
+  }
+
+  getUserInfo(): Observable<User> {
+    return this.http.get<User>(this._baseUrl + "user", this.getAuthHeader());
+  }
+
 }

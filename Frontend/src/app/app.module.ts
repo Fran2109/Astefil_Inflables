@@ -36,6 +36,7 @@ import { EditCategoryComponent } from './components/edit-category/edit-category.
 import { CreateArticleComponent } from './components/create-article/create-article.component';
 import { ConfirmDeleteArticleComponent } from './components/confirm-delete-article/confirm-delete-article.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -52,7 +53,8 @@ import { EditArticleComponent } from './components/edit-article/edit-article.com
     EditCategoryComponent,
     CreateArticleComponent,
     ConfirmDeleteArticleComponent,
-    EditArticleComponent
+    EditArticleComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
