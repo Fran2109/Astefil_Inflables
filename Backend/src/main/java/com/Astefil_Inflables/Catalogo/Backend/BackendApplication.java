@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.io.File;
+import java.time.LocalDate;
 
 @SpringBootApplication
 public class BackendApplication {
@@ -19,7 +20,7 @@ public class BackendApplication {
 	}
 
 	@Bean
-	CommandLineRunner run(@Autowired IUserService userService, @Autowired ICategoryService categoryService, @Autowired IArticleService articleService, @Autowired IZoneService zoneService, @Autowired IImageService imageService){
+	CommandLineRunner run(@Autowired IUserService userService, @Autowired ICategoryService categoryService, @Autowired IArticleService articleService, @Autowired IZoneService zoneService, @Autowired IImageService imageService, @Autowired IUserQueryService userQueryService){
 		return args -> {
 			// Initialize uploads folder
 			imageService.deleteAll();
@@ -91,17 +92,39 @@ public class BackendApplication {
 			Article yenga = articleService.createArticle("Yenga", "Yenga", (float) 1, (float) 1, (float) 1, juegosCategory, yengaImages);
 
 			// Create default zones
-			zoneService.createZone("Tortuguitas");
-			zoneService.createZone("Grand Bourg");
-			zoneService.createZone("Tierras Altas");
-			zoneService.createZone("Pablo Nogués");
-			zoneService.createZone("Los Polvorines");
-			zoneService.createZone("Villa de Mayo");
-			zoneService.createZone("Manuel Alberti");
-			zoneService.createZone("Del Viso");
-			zoneService.createZone("Ingeniero Adolfo Sourdeaux");
-			zoneService.createZone("José C. Paz");
-			zoneService.createZone("Villa Rosa");
+			Zone tortuguitasZone = zoneService.createZone("Tortuguitas");
+			Zone grandBourgZone = zoneService.createZone("Grand Bourg");
+			Zone tierrasAltasZone = zoneService.createZone("Tierras Altas");
+			Zone pabloNoguesZone = zoneService.createZone("Pablo Nogués");
+			Zone losPolvorinesZone = zoneService.createZone("Los Polvorines");
+			Zone villaDeMayoZone = zoneService.createZone("Villa de Mayo");
+			Zone manuelAlbertiZone = zoneService.createZone("Manuel Alberti");
+			Zone delVisoZone = zoneService.createZone("Del Viso");
+			Zone ingenieroSourdeauxZone = zoneService.createZone("Ingeniero Adolfo Sourdeaux");
+			Zone joseCPazZone = zoneService.createZone("José C. Paz");
+			Zone villaRosaZone = zoneService.createZone("Villa Rosa");
+
+			// Create default user queries
+			userQueryService.createUserQuery("Juan", "Pérez", tortuguitasZone.getId(), LocalDate.now().minusDays(1), "Consulta sobre disponibilidad de castillos", "+5491123456789");
+			userQueryService.createUserQuery("María", "Gómez", grandBourgZone.getId(), LocalDate.now().minusDays(2), "Consulta sobre precios de juegos acuáticos", "+5492212345678");
+			userQueryService.createUserQuery("Carlos", "López", tierrasAltasZone.getId(), LocalDate.now().minusDays(3), "Consulta sobre disponibilidad de inflables gigantes", "+5491167894321");
+			userQueryService.createUserQuery("Ana", "Martínez", pabloNoguesZone.getId(), LocalDate.now().minusDays(4), "Consulta sobre opciones de alquiler", "+5491156784321");
+			userQueryService.createUserQuery("Lucía", "Ramírez", losPolvorinesZone.getId(), LocalDate.now().minusDays(5), "Consulta sobre condiciones de alquiler", "+5492212345670");
+			userQueryService.createUserQuery("Sofía", "Díaz", villaDeMayoZone.getId(), LocalDate.now().minusDays(6), "Consulta sobre promociones", "+5491145678901");
+			userQueryService.createUserQuery("Miguel", "Fernández", manuelAlbertiZone.getId(), LocalDate.now().minusDays(7), "Consulta sobre tamaños de inflables", "+5491167890123");
+			userQueryService.createUserQuery("Laura", "Castro", delVisoZone.getId(), LocalDate.now().minusDays(8), "Consulta sobre seguros incluidos", "+5491134567890");
+			userQueryService.createUserQuery("Andrés", "Rodríguez", ingenieroSourdeauxZone.getId(), LocalDate.now().minusDays(9), "Consulta sobre disponibilidad en enero", "+5491198765432");
+			userQueryService.createUserQuery("Gabriela", "Mendoza", joseCPazZone.getId(), LocalDate.now().minusDays(10), "Consulta sobre opciones para adultos", "+5491134987654");
+			userQueryService.createUserQuery("Tomás", "Silva", villaRosaZone.getId(), LocalDate.now().minusDays(11), "Consulta sobre precios de inflables de agua", "+5491143567890");
+			userQueryService.createUserQuery("Valeria", "Ortega", tortuguitasZone.getId(), LocalDate.now().minusDays(12), "Consulta sobre métodos de pago", "+5491135674321");
+			userQueryService.createUserQuery("Pablo", "Romero", grandBourgZone.getId(), LocalDate.now().minusDays(13), "Consulta sobre cantidad de inflables disponibles", "+5491123478901");
+			userQueryService.createUserQuery("Natalia", "Quintero", tierrasAltasZone.getId(), LocalDate.now().minusDays(14), "Consulta sobre instalación incluida", "+5491187654321");
+			userQueryService.createUserQuery("Rodrigo", "Sánchez", pabloNoguesZone.getId(), LocalDate.now().minusDays(15), "Consulta sobre horarios de entrega", "+5491145678902");
+			userQueryService.createUserQuery("Carolina", "Vega", losPolvorinesZone.getId(), LocalDate.now().minusDays(16), "Consulta sobre paquetes familiares", "+5491156789012");
+			userQueryService.createUserQuery("Fernando", "Paredes", villaDeMayoZone.getId(), LocalDate.now().minusDays(17), "Consulta sobre costos adicionales", "+5491198765433");
+			userQueryService.createUserQuery("Silvana", "Suárez", manuelAlbertiZone.getId(), LocalDate.now().minusDays(18), "Consulta sobre condiciones de mantenimiento", "+5491176543210");
+			userQueryService.createUserQuery("Emanuel", "Luna", delVisoZone.getId(), LocalDate.now().minusDays(19), "Consulta sobre disponibilidad en diciembre", "+5491165432198");
+			userQueryService.createUserQuery("Lorena", "Vargas", ingenieroSourdeauxZone.getId(), LocalDate.now().minusDays(20), "Consulta sobre eventos corporativos", "+5491123432109");
 		};
 	}
 }
