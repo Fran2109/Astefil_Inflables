@@ -1,0 +1,106 @@
+<h2 mat-dialog-title class="modal-title">Agregar Nuevo Artículo</h2>
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()" class="article-form">
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre del Artículo</mat-label>
+        <input matInput formControlName="name" required />
+        <mat-error *ngIf="articleForm.controls['name'].hasError('required')">
+            El nombre es obligatorio.
+        </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="description" required></textarea>
+        <mat-error
+            *ngIf="articleForm.controls['description'].hasError('required')"
+        >
+            La descripción es obligatoria.
+        </mat-error>
+    </mat-form-field>
+
+    <div class="dimensions-section">
+        <mat-form-field appearance="outline">
+            <mat-label>Altura</mat-label>
+            <input matInput type="number" formControlName="height" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Ancho</mat-label>
+            <input matInput type="number" formControlName="width" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Largo</mat-label>
+            <input matInput type="number" formControlName="length" required />
+        </mat-form-field>
+    </div>
+
+    <div class="file-upload">
+        <label for="images">Cargar Imágenes</label>
+
+        <button
+            type="button"
+            mat-raised-button
+            color="primary"
+            (click)="fileInput.click()"
+            class="upload-button"
+        >
+            Seleccionar Imágenes
+        </button>
+        <input
+            type="file"
+            #fileInput
+            (change)="onFileChange($event)"
+            multiple
+            style="display: none"
+        />
+
+        <div *ngIf="images.length > 0" class="selected-files">
+            <span *ngFor="let image of images">{{ image.name }}</span>
+        </div>
+
+        <mat-error *ngIf="invalidFileFormat">
+            Solo se permiten archivos de imagen con extensiones:
+            {{ allowedExtensions.join(", ") }}.
+        </mat-error>
+    </div>
+
+    <div class="image-previews" *ngIf="imagePreviews.length > 0">
+        <h4>Vista previa de las imágenes:</h4>
+        <div class="preview-grid">
+            <div
+                class="preview-container"
+                *ngFor="let preview of imagePreviews; let i = index"
+            >
+                <img [src]="preview" alt="Vista previa de la imagen" />
+                <button
+                    type="button"
+                    class="remove-button"
+                    (click)="removeImage(i)"
+                >
+                    ✕
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div mat-dialog-actions class="dialog-actions">
+        <button
+            mat-button
+            type="button"
+            (click)="onCancel()"
+            class="cancel-button"
+        >
+            Cancelar
+        </button>
+        <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="articleForm.invalid"
+            class="submit-button"
+        >
+            Agregar
+        </button>
+    </div>
+</form>

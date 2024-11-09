@@ -54,7 +54,16 @@
                 </ul>
             </div>
             <div class="articles-list">
-                <h2>{{ selectedCategory?.name }}</h2>
+                <div class="articles-header">
+                    <h2>{{ selectedCategory?.name }}</h2>
+                    <button
+                        mat-raised-button
+                        color="primary"
+                        (click)="openAddArticleModal()"
+                    >
+                        Agregar Nuevo Artículo
+                    </button>
+                </div>
                 <div class="article-card" *ngFor="let article of articles">
                     <div class="card-image-wrapper">
                         <img

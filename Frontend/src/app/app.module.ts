@@ -33,7 +33,7 @@ import { ArticleDetailComponent } from './components/article-detail/article-deta
 import { CreateCategoryComponent } from './components/create-category/create-category.component';
 import { ConfirmDeleteCategoryComponent } from './components/confirm-delete-category/confirm-delete-category.component';
 import { EditCategoryComponent } from './components/edit-category/edit-category.component';
-
+import { CreateArticleComponent } from './components/create-article/create-article.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,8 @@ import { EditCategoryComponent } from './components/edit-category/edit-category.
     ArticleDetailComponent,
     CreateCategoryComponent,
     ConfirmDeleteCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    CreateArticleComponent
   ],
   imports: [
     BrowserModule,

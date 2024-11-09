@@ -41,4 +41,8 @@ export class ArticleService {
     }
     return "assets/images/no-image.jpg";
   }
+
+  addArticle(articleData: FormData): Observable<Article> {
+    return this.apiService.addArticle(articleData);
+  }
 }

@@ -8,6 +8,7 @@ import { CreateCategoryComponent } from '../create-category/create-category.comp
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDeleteCategoryComponent } from '../confirm-delete-category/confirm-delete-category.component';
 import { EditCategoryComponent } from '../edit-category/edit-category.component';
+import { CreateArticleComponent } from '../create-article/create-article.component';
 
 @Component({
   selector: 'app-articles',
@@ -100,6 +101,19 @@ export class ArticlesComponent implements OnInit {
   decrementCategoryOrder(id: number) {
     this.categoryService.decrementCategoryOrder(id).subscribe((data) => {
       this.ngOnInit();
+    });
+  }
+
+  openAddArticleModal(): void {
+    const dialogRef = this.dialog.open(CreateArticleComponent, {
+      width: '500px',
+      data: { idCategory: this.selectedCategory.id }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.ngOnInit();
+      }
     });
   }
 

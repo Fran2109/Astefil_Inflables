@@ -67,8 +67,9 @@ public class ImageServiceImpl implements IImageService {
             if (!articleFolder.exists()) {
                 articleFolder.mkdirs();
             }
-            Files.copy(file.getInputStream(), this.root.resolve(article.getId() +"/" + Objects.requireNonNull(file.getOriginalFilename())));
             Image image = this.imageRepository.save(new Image(file.getOriginalFilename(), file.getContentType()));
+            Files.copy(file.getInputStream(), this.root.resolve(article.getId() +"/" + image.getId() + "_" +Objects.requireNonNull(file.getOriginalFilename())));
+
             image.setArticle(article);
             return this.imageRepository.save(image);
         }catch (Exception e) {

@@ -8,6 +8,7 @@ export class Article {
     width?: number;
     length?: number;
     images?: Image[];
+    categoryId?: number;
 
     constructor(
         id: number,
@@ -17,6 +18,7 @@ export class Article {
         width: number,
         length: number,
         images: Image[],
+        categoryId: number
     ) {
         this.id = id;
         this.name = name;
@@ -25,5 +27,6 @@ export class Article {
         this.width = width;
         this.length = length;
         this.images = images;
+        this.categoryId = categoryId;
     }
 }

@@ -60,4 +60,8 @@ export class ApiService {
       {}
     );
   }
+
+  addArticle(articleData: FormData): Observable<Article> {
+    return this.http.post<Article>(`${this._baseUrl}article`, articleData);
+  }
 }
