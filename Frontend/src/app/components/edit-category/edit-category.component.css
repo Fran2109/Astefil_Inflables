@@ -1,0 +1,33 @@
+.modal-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.category-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.cancel-button {
+    color: #757575;
+}
+
+.submit-button {
+    background-color: #4caf50;
+    color: white;
+}

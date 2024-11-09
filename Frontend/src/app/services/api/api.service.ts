@@ -42,4 +42,8 @@ export class ApiService {
   getImage(id: Number, imageId: Number, imageName: string): String {
     return this._baseUrl + "image/" + id + "/" + imageId + "_" + imageName
   }
+
+  updateCategory(category: Category): Observable<Category> {
+    return this.http.put<Category>(this._baseUrl + 'category/' + category.id, category);
+  }
 }
