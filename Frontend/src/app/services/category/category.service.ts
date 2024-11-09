@@ -17,4 +17,8 @@ export class CategoryService {
   addCategory(category: Category): Observable<Category> {
     return this.apiService.addCategory(category);
   }
+
+  deleteCategory(id: number): Observable<void> {
+    return this.apiService.deleteCategory(id);
+  }
 }

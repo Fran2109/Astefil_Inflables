@@ -19,6 +19,10 @@ export class ApiService {
     return this.http.post<Category>(this._baseUrl + 'category', category);
   }
 
+  deleteCategory(id: number): Observable<void> {
+    return this.http.delete<void>(this._baseUrl + 'category/' + id);
+  }
+
   getAllArticles(): Observable<Article[]> {
     return this.http.get<any[]>(this._baseUrl + "article");
   }

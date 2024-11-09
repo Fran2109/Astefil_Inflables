@@ -31,6 +31,8 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 import { CreateCategoryComponent } from './components/create-category/create-category.component';
+import { ConfirmDeleteCategoryComponent } from './components/confirm-delete-category/confirm-delete-category.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { CreateCategoryComponent } from './components/create-category/create-cat
     LandingPageComponent,
     ArticlesComponent,
     ArticleDetailComponent,
-    CreateCategoryComponent
+    CreateCategoryComponent,
+    ConfirmDeleteCategoryComponent
   ],
   imports: [
     BrowserModule,

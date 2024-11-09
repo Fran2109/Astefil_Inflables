@@ -18,6 +18,13 @@
                         [class.active]="category.id === selectedCategory?.id"
                     >
                         {{ category.name }}
+                        <button
+                            mat-icon-button
+                            color="warn"
+                            (click)="openDeleteCategoryModal(category)"
+                        >
+                            <mat-icon>delete</mat-icon>
+                        </button>
                     </li>
                 </ul>
             </div>

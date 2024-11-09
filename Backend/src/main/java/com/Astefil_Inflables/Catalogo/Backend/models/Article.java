@@ -48,7 +48,7 @@ public class Article {
     @JsonBackReference
     private Category category;
 
-    @OneToMany(mappedBy = "article")
+    @OneToMany(mappedBy = "article", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Image> images;
 

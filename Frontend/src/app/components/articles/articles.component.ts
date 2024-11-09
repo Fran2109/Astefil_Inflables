@@ -6,6 +6,7 @@ import { ArticleService } from 'src/app/services/article/article.service';
 import { CategoryService } from 'src/app/services/category/category.service';
 import { CreateCategoryComponent } from '../create-category/create-category.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDeleteCategoryComponent } from '../confirm-delete-category/confirm-delete-category.component';
 
 @Component({
   selector: 'app-articles',
@@ -54,6 +55,25 @@ export class ArticlesComponent implements OnInit {
       if (result) {
         this.ngOnInit();
       }
+    });
+  }
+
+  openDeleteCategoryModal(category: Category): void {
+    const dialogRef = this.dialog.open(ConfirmDeleteCategoryComponent, {
+      width: '400px',
+      data: { categoryName: category.name }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.deleteCategory(category.id!);
+      }
+    });
+  }
+
+  deleteCategory(id: number): void {
+    this.categoryService.deleteCategory(id).subscribe(() => {
+      this.ngOnInit();
     });
   }
 }

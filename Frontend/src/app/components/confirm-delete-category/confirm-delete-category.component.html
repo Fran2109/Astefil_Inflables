@@ -1,0 +1,19 @@
+<h2 mat-dialog-title class="modal-title">Eliminar Categoría</h2>
+<p class="modal-content">
+    ¿Estás seguro de que deseas eliminar la categoría "{{ categoryName }}"?
+</p>
+
+<div mat-dialog-actions class="dialog-actions">
+    <button mat-button type="button" (click)="onCancel()" class="cancel-button">
+        Cancelar
+    </button>
+    <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        (click)="onConfirm()"
+        class="confirm-button"
+    >
+        Eliminar
+    </button>
+</div>
