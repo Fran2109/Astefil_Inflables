@@ -32,6 +32,24 @@
                         >
                             <mat-icon>edit</mat-icon>
                         </button>
+                        <button
+                            mat-icon-button
+                            color="primary"
+                            (click)="decrementCategoryOrder(category.id)"
+                            [disabled]="category.orderNumber == 1"
+                        >
+                            <mat-icon>arrow_upward</mat-icon>
+                        </button>
+                        <button
+                            mat-icon-button
+                            color="primary"
+                            (click)="incrementCategoryOrder(category.id)"
+                            [disabled]="
+                                category.orderNumber == categories.length
+                            "
+                        >
+                            <mat-icon>arrow_downward</mat-icon>
+                        </button>
                     </li>
                 </ul>
             </div>

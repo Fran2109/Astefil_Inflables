@@ -90,4 +90,17 @@ export class ArticlesComponent implements OnInit {
       }
     });
   }
+
+  incrementCategoryOrder(id: number) {
+    this.categoryService.incrementCategoryOrder(id).subscribe((data) => {
+      this.ngOnInit();
+    });
+  }
+
+  decrementCategoryOrder(id: number) {
+    this.categoryService.decrementCategoryOrder(id).subscribe((data) => {
+      this.ngOnInit();
+    });
+  }
+
 }

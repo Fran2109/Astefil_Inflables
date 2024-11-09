@@ -46,4 +46,18 @@ export class ApiService {
   updateCategory(category: Category): Observable<Category> {
     return this.http.put<Category>(this._baseUrl + 'category/' + category.id, category);
   }
+
+  incrementCategoryOrder(id: number): Observable<Category> {
+    return this.http.put(
+      this._baseUrl + "category/" + id + "/incrementOrderNumber",
+      {}
+    );
+  }
+
+  decrementCategoryOrder(id: number): Observable<Category> {
+    return this.http.put(
+      this._baseUrl + "category/" + id + "/decrementOrderNumber",
+      {}
+    );
+  }
 }

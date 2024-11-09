@@ -25,4 +25,12 @@ export class CategoryService {
   updateCategory(category: Category): Observable<Category> {
     return this.apiService.updateCategory(category);
   }
+
+  incrementCategoryOrder(id: number): Observable<Category> {
+    return this.apiService.incrementCategoryOrder(id);
+  }
+
+  decrementCategoryOrder(id: number): Observable<Category> {
+    return this.apiService.decrementCategoryOrder(id);
+  }
 }
