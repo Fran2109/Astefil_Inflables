@@ -15,6 +15,10 @@ export class ApiService {
     return this.http.get<Category[]>(this._baseUrl + "category/order");
   }
 
+  addCategory(category: Category): Observable<Category> {
+    return this.http.post<Category>(this._baseUrl + 'category', category);
+  }
+
   getAllArticles(): Observable<Article[]> {
     return this.http.get<any[]>(this._baseUrl + "article");
   }

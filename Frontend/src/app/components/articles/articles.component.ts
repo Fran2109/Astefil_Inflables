@@ -4,6 +4,8 @@ import { Article } from 'src/app/models/Article';
 import { Category } from 'src/app/models/Category';
 import { ArticleService } from 'src/app/services/article/article.service';
 import { CategoryService } from 'src/app/services/category/category.service';
+import { CreateCategoryComponent } from '../create-category/create-category.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-articles',
@@ -17,7 +19,7 @@ export class ArticlesComponent implements OnInit {
   selectedCategory: any;
 
 
-  constructor(private articleService: ArticleService, private categoryService: CategoryService, private router: Router) { }
+  constructor(private articleService: ArticleService, private categoryService: CategoryService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.loading = true;
@@ -41,5 +43,17 @@ export class ArticlesComponent implements OnInit {
 
   returnFirstImage(article: Article): String {
     return this.articleService.returnFirstImage(article);
+  }
+
+  openCreateCategoryModal(): void {
+    const dialogRef = this.dialog.open(CreateCategoryComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.ngOnInit();
+      }
+    });
   }
 }

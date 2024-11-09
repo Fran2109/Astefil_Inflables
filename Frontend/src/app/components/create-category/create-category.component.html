@@ -1,0 +1,30 @@
+<h2 mat-dialog-title class="modal-title">Crear Nueva Categoría</h2>
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" class="category-form">
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre de la Categoría</mat-label>
+        <input matInput formControlName="name" required />
+        <mat-error *ngIf="categoryForm.controls['name'].hasError('required')">
+            El nombre es obligatorio.
+        </mat-error>
+    </mat-form-field>
+
+    <div mat-dialog-actions class="dialog-actions">
+        <button
+            mat-button
+            type="button"
+            (click)="onCancel()"
+            class="cancel-button"
+        >
+            Cancelar
+        </button>
+        <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="categoryForm.invalid"
+            class="submit-button"
+        >
+            Crear
+        </button>
+    </div>
+</form>

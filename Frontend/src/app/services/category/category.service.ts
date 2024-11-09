@@ -13,4 +13,8 @@ export class CategoryService {
   getOrderedCategories(): Observable<Category[]> {
     return this.apiService.getOrderedCategories();
   }
+
+  addCategory(category: Category): Observable<Category> {
+    return this.apiService.addCategory(category);
+  }
 }

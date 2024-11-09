@@ -4,6 +4,13 @@
         <div class="articles-container">
             <div class="categories-sidebar">
                 <h3>Categorías</h3>
+                <button
+                    mat-raised-button
+                    color="primary"
+                    (click)="openCreateCategoryModal()"
+                >
+                    Crear Nueva Categoría
+                </button>
                 <ul>
                     <li
                         *ngFor="let category of categories"
