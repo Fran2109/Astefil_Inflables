@@ -79,4 +79,12 @@ export class ArticleDetailComponent implements OnInit {
       this.viewportScroller.scrollToPosition([0, 0]);
     });
   }
+
+  returnFirstImage(article: Article): String {
+    return this.articleService.returnFirstImage(article);
+  }
+
+  getImage(id: Number, imageId: Number, imageName: string): String {
+    return this.articleService.getImage(id, imageId, imageName);
+  }
 }

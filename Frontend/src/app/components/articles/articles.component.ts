@@ -39,13 +39,7 @@ export class ArticlesComponent implements OnInit {
     this.router.navigate(['/articles', articleId])
   }
 
-  returnFirstImage(article: Article) {
-    if (article && article.id && article.images && article.images.length > 0) {
-      if (article.id !== undefined && article.images[0].id !== undefined) {
-        return this.articleService.getImage(article.id, article.images[0].id, article.images[0].name || '');
-      }
-      return "assets/images/no-image.jpg";
-    }
-    return "assets/images/no-image.jpg";
+  returnFirstImage(article: Article): String {
+    return this.articleService.returnFirstImage(article);
   }
 }

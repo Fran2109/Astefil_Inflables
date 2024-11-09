@@ -19,7 +19,13 @@
                 <ng-container *ngFor="let image of selectedArticle.images">
                     <ng-template carouselSlide>
                         <img
-                            [src]="image"
+                            [src]="
+                                getImage(
+                                    selectedArticle.id!,
+                                    image.id!,
+                                    image.name || ''
+                                )
+                            "
                             [alt]="selectedArticle.name"
                             class="carousel-image"
                             (click)="
@@ -46,7 +52,7 @@
                 >
                     <div class="card-image-wrapper">
                         <img
-                            [src]="article.images?.[0]"
+                            [src]="returnFirstImage(article)"
                             [alt]="article.name"
                             class="related-article-image"
                         />

@@ -32,5 +32,13 @@ export class ArticleService {
     return this.apiService.getRelatedArticles(currentArticleId);
   }
 
-
+  returnFirstImage(article: Article): String {
+    if (article && article.id && article.images && article.images.length > 0) {
+      if (article.id !== undefined && article.images[0].id !== undefined) {
+        return this.apiService.getImage(article.id, article.images[0].id, article.images[0].name || '');
+      }
+      return "assets/images/no-image.jpg";
+    }
+    return "assets/images/no-image.jpg";
+  }
 }
