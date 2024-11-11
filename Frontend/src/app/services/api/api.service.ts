@@ -5,6 +5,8 @@ import { Article } from 'src/app/models/Article';
 import { Category } from 'src/app/models/Category';
 import { ResponseLoginDTO } from 'src/app/models/ResponseLoginDTO';
 import { User } from 'src/app/models/User';
+import { UserQuery } from 'src/app/models/UserQuery';
+import { Zone } from 'src/app/models/Zone';
 
 @Injectable({
   providedIn: 'root'
@@ -94,4 +96,11 @@ export class ApiService {
     return this.http.get<User>(this._baseUrl + "user", this.getAuthHeader());
   }
 
+  getAllZones(): Observable<Zone[]> {
+    return this.http.get<Zone[]>(this._baseUrl + "zone");
+  }
+
+  sendContactQuery(userQuery: UserQuery): Observable<UserQuery> {
+    return this.http.post<UserQuery>(this._baseUrl + "user_query", userQuery);
+  }
 }

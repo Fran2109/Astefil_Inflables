@@ -37,7 +37,7 @@ import { CreateArticleComponent } from './components/create-article/create-artic
 import { ConfirmDeleteArticleComponent } from './components/confirm-delete-article/confirm-delete-article.component';
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
 import { LoginComponent } from './components/login/login.component';
-
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -54,7 +54,8 @@ import { LoginComponent } from './components/login/login.component';
     CreateArticleComponent,
     ConfirmDeleteArticleComponent,
     EditArticleComponent,
-    LoginComponent
+    LoginComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

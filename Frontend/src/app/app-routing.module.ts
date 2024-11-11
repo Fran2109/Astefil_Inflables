@@ -5,12 +5,14 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { ArticlesComponent } from './components/articles/articles.component';
 import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 import { LoginComponent } from './components/login/login.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'articles', component: ArticlesComponent },
   { path: 'articles/:id', component: ArticleDetailComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({

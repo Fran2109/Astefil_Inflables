@@ -1,0 +1,95 @@
+<div class="contact-container">
+    <h2 class="contact-title">Enviar Consulta</h2>
+    <div *ngIf="isSubmitted" class="success-message">
+        Su consulta ha sido enviada exitosamente.
+    </div>
+    <div *ngIf="isError" class="error-message">
+        Hubo un problema al enviar su consulta. Inténtelo de nuevo.
+    </div>
+    <form
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+        class="contact-form"
+    >
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="firstName" required />
+            <mat-error
+                *ngIf="contactForm.get('firstName')?.hasError('required')"
+                >El nombre es obligatorio</mat-error
+            >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="lastName" required />
+            <mat-error *ngIf="contactForm.get('lastName')?.hasError('required')"
+                >El apellido es obligatorio</mat-error
+            >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Zona</mat-label>
+            <mat-select formControlName="zoneId" required>
+                <mat-option *ngFor="let zone of zones" [value]="zone.id">{{
+                    zone.name
+                }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="contactForm.get('zoneId')?.hasError('required')"
+                >La zona es obligatoria</mat-error
+            >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Fecha</mat-label>
+            <input
+                matInput
+                [matDatepicker]="picker"
+                formControlName="date"
+                required
+            />
+            <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="contactForm.get('date')?.hasError('required')"
+                >La fecha es obligatoria</mat-error
+            >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Consulta General</mat-label>
+            <textarea
+                matInput
+                formControlName="generalQuery"
+                required
+            ></textarea>
+            <mat-error
+                *ngIf="contactForm.get('generalQuery')?.hasError('required')"
+                >La consulta es obligatoria</mat-error
+            >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Teléfono</mat-label>
+            <input matInput formControlName="phone" type="tel" required />
+            <mat-error *ngIf="contactForm.get('phone')?.hasError('required')"
+                >El teléfono es obligatorio</mat-error
+            >
+            <mat-error *ngIf="contactForm.get('phone')?.hasError('pattern')"
+                >El formato debe ser de 10 dígitos, ej: 1155911624</mat-error
+            >
+        </mat-form-field>
+
+        <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="contactForm.invalid"
+            class="submit-button"
+        >
+            Enviar Consulta
+        </button>
+    </form>
+</div>
