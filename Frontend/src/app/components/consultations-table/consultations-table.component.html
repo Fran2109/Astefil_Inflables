@@ -52,12 +52,12 @@
         </ng-container>
 
         <!-- Consulta General -->
-        <ng-container matColumnDef="generalQuery">
+        <!-- <ng-container matColumnDef="generalQuery">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>Consulta</th>
             <td mat-cell *matCellDef="let consultation">
                 {{ consultation.generalQuery }}
             </td>
-        </ng-container>
+        </ng-container> -->
 
         <ng-container matColumnDef="isAnswered">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>
@@ -68,12 +68,31 @@
             </td>
         </ng-container>
 
+        <!-- Columna de Acción -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Acción</th>
+            <td mat-cell *matCellDef="let consultation">
+                <button
+                    class="action-button"
+                    *ngIf="!consultation.isAnswered"
+                    color="primary"
+                    (click)="openReplyModal(consultation)"
+                >
+                    Contestar
+                </button>
+            </td>
+        </ng-container>
+
         <ng-container matColumnDef="answeredByUser">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>
                 Responsable
             </th>
             <td mat-cell *matCellDef="let consultation">
-                {{ consultation.answeredByUser }}
+                {{
+                    consultation.isAnswered
+                        ? consultation.answeredByUser.username
+                        : "N/A"
+                }}
             </td>
         </ng-container>
 
@@ -82,7 +101,12 @@
                 Fecha de Respuesta
             </th>
             <td mat-cell *matCellDef="let consultation">
-                {{ consultation.answeredDateTime }}
+                {{
+                    consultation.isAnswered
+                        ? (consultation.answeredDateTime
+                          | date : "dd/MM/yyyy hh:mm:ss")
+                        : "N/A"
+                }}
             </td>
         </ng-container>
 

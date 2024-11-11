@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Detalles de la Consulta</h2>
+<div mat-dialog-content>
+    <p>
+        <strong>Nombre:</strong> {{ data.consultation.firstName }}
+        {{ data.consultation.lastName }}
+    </p>
+    <p><strong>Zona:</strong> {{ data.consultation.zone.name }}</p>
+    <p>
+        <strong>Fecha:</strong>
+        {{ data.consultation.date | date : "dd/MM/yyyy" }}
+    </p>
+    <p><strong>Consulta:</strong> {{ data.consultation.generalQuery }}</p>
+    <p><strong>Teléfono:</strong> {{ data.consultation.phone }}</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button color="primary" (click)="onReply()">Contestar</button>
+    <button mat-button color="warn" (click)="onClose()">Cancelar</button>
+</div>

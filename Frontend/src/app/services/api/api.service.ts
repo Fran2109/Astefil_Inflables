@@ -107,4 +107,12 @@ export class ApiService {
   getUserQuerys(): Observable<UserQuery[]> {
     return this.http.get<UserQuery[]>(this._baseUrl + "user_query");
   }
+
+  replyToConsultation(consultationId: number): Observable<void> {
+    return this.http.put<void>(
+      this._baseUrl + "user_query/" + consultationId + "/answer",
+      {},
+      this.getAuthHeader()
+    );
+  }
 }

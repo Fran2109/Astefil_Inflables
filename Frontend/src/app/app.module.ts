@@ -42,7 +42,7 @@ import { EditArticleComponent } from './components/edit-article/edit-article.com
 import { LoginComponent } from './components/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ConsultationsTableComponent } from './components/consultations-table/consultations-table.component';
-
+import { ReplyConsultationModalComponent } from './components/reply-consultation-modal/reply-consultation-modal.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,8 @@ import { ConsultationsTableComponent } from './components/consultations-table/co
     EditArticleComponent,
     LoginComponent,
     ContactComponent,
-    ConsultationsTableComponent
+    ConsultationsTableComponent,
+    ReplyConsultationModalComponent
   ],
   imports: [
     BrowserModule,

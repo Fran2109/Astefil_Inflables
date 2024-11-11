@@ -28,3 +28,22 @@ table {
 .mat-row:hover {
     background-color: #e8f0ff;
 }
+
+.action-button {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #45a049;
+}
+
+.action-button:focus {
+    outline: none;
+    box-shadow: 0 0 4px #4caf50;
+}

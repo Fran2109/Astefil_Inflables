@@ -16,4 +16,8 @@ export class UserQueryService {
   getUserQuerys(): Observable<UserQuery[]> {
     return this.apiService.getUserQuerys();
   }
+
+  replyToConsultation(consultationId: number): Observable<void> {
+    return this.apiService.replyToConsultation(consultationId);
+  }
 }
