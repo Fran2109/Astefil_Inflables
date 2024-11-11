@@ -103,4 +103,8 @@ export class ApiService {
   sendContactQuery(userQuery: UserQuery): Observable<UserQuery> {
     return this.http.post<UserQuery>(this._baseUrl + "user_query", userQuery);
   }
+
+  getUserQuerys(): Observable<UserQuery[]> {
+    return this.http.get<UserQuery[]>(this._baseUrl + "user_query");
+  }
 }

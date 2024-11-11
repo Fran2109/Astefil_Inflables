@@ -2,11 +2,14 @@ package com.Astefil_Inflables.Catalogo.Backend.controllers;
 
 import com.Astefil_Inflables.Catalogo.Backend.dto.UserQuery.UserQueryDTO;
 import com.Astefil_Inflables.Catalogo.Backend.models.UserQuery;
+import com.Astefil_Inflables.Catalogo.Backend.models.Zone;
 import com.Astefil_Inflables.Catalogo.Backend.services.interfaces.IUserQueryService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/user_query")
@@ -33,5 +36,10 @@ public class UserQueryController {
     public ResponseEntity<UserQuery> answerUserQuery(@PathVariable Long id) {
         UserQuery userQuery = userQueryService.answerUserQuery(id);
         return ResponseEntity.ok(userQuery);
+    }
+
+    @GetMapping()
+    public List<UserQuery> getAllUserQueries() {
+        return userQueryService.getAllUserQueries();
     }
 }

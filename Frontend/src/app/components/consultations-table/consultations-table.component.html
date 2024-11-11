@@ -1,0 +1,97 @@
+<div class="table-container">
+    <h2>Consultas de Usuarios</h2>
+    <table
+        mat-table
+        [dataSource]="consultations"
+        matSort
+        class="mat-elevation-z8"
+    >
+        <!-- Nombre Completo -->
+        <ng-container matColumnDef="fullName">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Nombre Completo
+            </th>
+            <td mat-cell *matCellDef="let consultation">
+                {{ consultation.firstName }} {{ consultation.lastName }}
+            </td>
+        </ng-container>
+
+        <!-- Zona -->
+        <ng-container matColumnDef="zone">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Zona</th>
+            <td mat-cell *matCellDef="let consultation">
+                {{ consultation.zone.name }}
+            </td>
+        </ng-container>
+
+        <!-- Fecha -->
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
+            <td mat-cell *matCellDef="let consultation">
+                {{ consultation.date | date : "dd/MM/yyyy" }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="createdDateTime">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Fecha de Consulta
+            </th>
+            <td mat-cell *matCellDef="let consultation">
+                {{
+                    consultation.createdDateTime | date : "dd/MM/yyyy hh:mm:ss"
+                }}
+            </td>
+        </ng-container>
+
+        <!-- Teléfono -->
+        <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Teléfono</th>
+            <td mat-cell *matCellDef="let consultation">
+                {{ consultation.phone }}
+            </td>
+        </ng-container>
+
+        <!-- Consulta General -->
+        <ng-container matColumnDef="generalQuery">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Consulta</th>
+            <td mat-cell *matCellDef="let consultation">
+                {{ consultation.generalQuery }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="isAnswered">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Contestada
+            </th>
+            <td mat-cell *matCellDef="let consultation">
+                {{ consultation.isAnswered ? "Sí" : "No" }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="answeredByUser">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Responsable
+            </th>
+            <td mat-cell *matCellDef="let consultation">
+                {{ consultation.answeredByUser }}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="answeredDateTime">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                Fecha de Respuesta
+            </th>
+            <td mat-cell *matCellDef="let consultation">
+                {{ consultation.answeredDateTime }}
+            </td>
+        </ng-container>
+
+        <!-- Fila de Encabezado y Celdas -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator
+        [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+    ></mat-paginator>
+</div>

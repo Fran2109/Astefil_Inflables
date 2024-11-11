@@ -12,4 +12,8 @@ export class UserQueryService {
   sendContactQuery(query: UserQuery): Observable<UserQuery> {
     return this.apiService.sendContactQuery(query);
   }
+
+  getUserQuerys(): Observable<UserQuery[]> {
+    return this.apiService.getUserQuerys();
+  }
 }

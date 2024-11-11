@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class UserQueryServiceImpl implements IUserQueryService {
@@ -47,5 +48,10 @@ public class UserQueryServiceImpl implements IUserQueryService {
         userQuery.setAnsweredDateTime(LocalDateTime.now());
         userQuery.setAnsweredByUser(answeredByUser);
         return userQueryRepository.save(userQuery);
+    }
+
+    @Override
+    public List<UserQuery> getAllUserQueries() {
+        return (List<UserQuery>) userQueryRepository.findAll();
     }
 }

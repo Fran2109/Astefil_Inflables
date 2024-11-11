@@ -24,6 +24,9 @@ import { MatOptionModule } from "@angular/material/core";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatTableModule } from "@angular/material/table";
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { AppComponent } from './components/app/app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -38,6 +41,7 @@ import { ConfirmDeleteArticleComponent } from './components/confirm-delete-artic
 import { EditArticleComponent } from './components/edit-article/edit-article.component';
 import { LoginComponent } from './components/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ConsultationsTableComponent } from './components/consultations-table/consultations-table.component';
 
 
 @NgModule({
@@ -55,7 +59,8 @@ import { ContactComponent } from './components/contact/contact.component';
     ConfirmDeleteArticleComponent,
     EditArticleComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    ConsultationsTableComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +87,9 @@ import { ContactComponent } from './components/contact/contact.component';
     MatOptionModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [
     provideAnimationsAsync()

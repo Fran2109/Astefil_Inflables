@@ -1,0 +1,30 @@
+.table-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-header-cell,
+.mat-cell {
+    padding: 10px;
+}
+
+.mat-header-row {
+    background-color: #3f51b5;
+    color: white;
+}
+
+.mat-row:hover {
+    background-color: #e8f0ff;
+}
