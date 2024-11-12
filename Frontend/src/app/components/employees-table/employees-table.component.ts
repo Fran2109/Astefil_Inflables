@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserService } from 'src/app/services/user/user.service';
+import { CreateEmployeeComponent } from '../create-employee/create-employee.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-employees-table',
@@ -16,7 +18,7 @@ export class EmployeesTableComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.loadEmployees();
@@ -30,6 +32,18 @@ export class EmployeesTableComponent implements OnInit, AfterViewInit {
   loadEmployees(): void {
     this.userService.getAllEmployes().subscribe((data) => {
       this.employees.data = data;
+    });
+  }
+
+  openAddEmployeeModal(): void {
+    const dialogRef = this.dialog.open(CreateEmployeeComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.ngOnInit();
+      }
     });
   }
 }

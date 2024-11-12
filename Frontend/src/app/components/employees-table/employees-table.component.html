@@ -1,5 +1,9 @@
 <div class="employees-table-container">
     <h2>Lista de Empleados</h2>
+    <button mat-raised-button color="primary" (click)="openAddEmployeeModal()">
+        Agregar Empleado
+    </button>
+
     <table mat-table [dataSource]="employees" class="mat-elevation-z8" matSort>
         <!-- Email -->
         <ng-container matColumnDef="username">
