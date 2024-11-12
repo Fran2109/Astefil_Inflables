@@ -50,6 +50,7 @@ import { ConfirmDeleteEmployeeComponent } from './components/confirm-delete-empl
 import { CoverageZoneComponent } from './components/coverage-zone/coverage-zone.component';
 import { CreateZoneComponent } from './components/create-zone/create-zone.component';
 import { ConfirmDeleteZoneComponent } from './components/confirm-delete-zone/confirm-delete-zone.component';
+import { EditZoneComponent } from './components/edit-zone/edit-zone.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { ConfirmDeleteZoneComponent } from './components/confirm-delete-zone/con
     ConfirmDeleteEmployeeComponent,
     CoverageZoneComponent,
     CreateZoneComponent,
-    ConfirmDeleteZoneComponent
+    ConfirmDeleteZoneComponent,
+    EditZoneComponent
   ],
   imports: [
     BrowserModule,

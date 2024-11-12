@@ -14,8 +14,15 @@
         </button>
         <ul>
             <li *ngFor="let zone of zones">
-                {{ zone.name
-                }}<button
+                {{ zone.name }}
+                <button
+                    mat-icon-button
+                    color="accent"
+                    (click)="openEditZoneModal(zone)"
+                >
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button
                     mat-icon-button
                     color="warn"
                     (click)="openDeleteZoneModal(zone)"
