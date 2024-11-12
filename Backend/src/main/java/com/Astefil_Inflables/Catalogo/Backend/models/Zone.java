@@ -16,12 +16,17 @@ public class Zone {
     @NotBlank(message = "Name cannot be blank")
     private String name;
 
+    private Number latitude;
+    private Number longitude;
+
     public Zone(){
 
     }
 
-    public Zone(String name){
+    public Zone(String name, Number latitude, Number longitude){
         this.name = name;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public void setId(Long id){
@@ -35,5 +40,17 @@ public class Zone {
     }
     public String getName(){
         return this.name;
+    }
+    public void setLatitude(Number latitude){
+        this.latitude = latitude;
+    }
+    public Number getLatitude(){
+        return this.latitude;
+    }
+    public void setLongitude(Number longitude){
+        this.longitude = longitude;
+    }
+    public Number getLongitude(){
+        return this.longitude;
     }
 }

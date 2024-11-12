@@ -30,22 +30,24 @@ public class ZoneServiceImpl implements IZoneService {
 
     @Override
     @Transactional
-    public Zone createZone(String name) {
+    public Zone createZone(String name, Number latitude, Number longitude) {
         List<Zone> zones = this.getAllZones();
         for(Zone Zone : zones){
             if(Zone.getName().equals(name)){
                 throw new NotAllowedException("Zone with name: '"+ name +"' already exists");
             }
         }
-        Zone newZone = new Zone(name);
+        Zone newZone = new Zone(name, latitude, longitude);
         return this.zoneRepository.save(newZone);
     }
 
     @Override
     @Transactional
-    public Zone updateZone(Long id, String name) {
+    public Zone updateZone(Long id, String name, Number latitude, Number longitude) {
         Zone zone = this.getZoneById(id);
         zone.setName(name);
+        zone.setLatitude(latitude);
+        zone.setLongitude(longitude);
         return this.zoneRepository.save(zone);
     }
 

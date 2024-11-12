@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ConsultationsTableComponent } from './components/consultations-table/consultations-table.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
+import { CoverageZoneComponent } from './components/coverage-zone/coverage-zone.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'consultations', component: ConsultationsTableComponent },
   { path: 'employees', component: EmployeesTableComponent },
+  { path: 'coverage_zones', component: CoverageZoneComponent },
 ];
 
 @NgModule({

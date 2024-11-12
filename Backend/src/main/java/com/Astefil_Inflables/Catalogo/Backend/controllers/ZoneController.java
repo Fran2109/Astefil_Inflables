@@ -30,12 +30,12 @@ public class ZoneController {
 
     @PostMapping(path = "")
     public Zone createZone(@Valid @RequestBody @NotNull ZoneDTO zone) {
-        return this.zoneService.createZone(zone.getName());
+        return this.zoneService.createZone(zone.getName(), zone.getLatitude(), zone.getLongitude());
     }
 
     @PutMapping(path = "/{id}")
     public Zone updateZone(@PathVariable Long id, @Valid @RequestBody @NotNull ZoneDTO zone) {
-        return this.zoneService.updateZone(id, zone.getName());
+        return this.zoneService.updateZone(id, zone.getName(), zone.getLatitude(), zone.getLongitude());
     }
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<?> deleteZone(@PathVariable Long id) {

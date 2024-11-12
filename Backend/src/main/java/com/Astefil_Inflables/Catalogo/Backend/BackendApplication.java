@@ -92,17 +92,16 @@ public class BackendApplication {
 			Article yenga = articleService.createArticle("Yenga", "Yenga", (float) 1, (float) 1, (float) 1, juegosCategory, yengaImages);
 
 			// Create default zones
-			Zone tortuguitasZone = zoneService.createZone("Tortuguitas");
-			Zone grandBourgZone = zoneService.createZone("Grand Bourg");
-			Zone tierrasAltasZone = zoneService.createZone("Tierras Altas");
-			Zone pabloNoguesZone = zoneService.createZone("Pablo Nogués");
-			Zone losPolvorinesZone = zoneService.createZone("Los Polvorines");
-			Zone villaDeMayoZone = zoneService.createZone("Villa de Mayo");
-			Zone manuelAlbertiZone = zoneService.createZone("Manuel Alberti");
-			Zone delVisoZone = zoneService.createZone("Del Viso");
-			Zone ingenieroSourdeauxZone = zoneService.createZone("Ingeniero Adolfo Sourdeaux");
-			Zone joseCPazZone = zoneService.createZone("José C. Paz");
-			Zone villaRosaZone = zoneService.createZone("Villa Rosa");
+			Zone tortuguitasZone = zoneService.createZone("Tortuguitas", -34.47102820314736, -58.759375465040044);
+			Zone grandBourgZone = zoneService.createZone("Grand Bourg", -34.4834089360539, -58.72866440757561);
+			Zone tierrasAltasZone = zoneService.createZone("Tierras Altas", -34.478357359271385, -58.739760776250364);
+			Zone pabloNoguesZone = zoneService.createZone("Pablo Nogués", -34.481890615079195, -58.69951008650275);
+			Zone losPolvorinesZone = zoneService.createZone("Los Polvorines", -34.49962602669663, -58.69159679027918);
+			Zone villaDeMayoZone = zoneService.createZone("Villa de Mayo", -34.511258605627546, -58.679712556183816);
+			Zone manuelAlbertiZone = zoneService.createZone("Manuel Alberti", -34.434609288289955, -58.7807627626484);
+			Zone delVisoZone = zoneService.createZone("Del Viso", -34.447697551623776, -58.80531536306665);
+			Zone ingenieroSourdeauxZone = zoneService.createZone("Ingeniero Adolfo Sourdeaux", -34.50246426917496, -58.66751684398748);
+			Zone joseCPazZone = zoneService.createZone("José C. Paz", -34.515163383266376, -58.765993597297026);
 
 			// Create default user queries
 			userQueryService.createUserQuery("Juan", "Pérez", tortuguitasZone.getId(), LocalDate.now().minusDays(1), "Consulta sobre disponibilidad de castillos", "1123456789");
@@ -115,7 +114,7 @@ public class BackendApplication {
 			userQueryService.createUserQuery("Laura", "Castro", delVisoZone.getId(), LocalDate.now().minusDays(8), "Consulta sobre seguros incluidos", "1134567890");
 			userQueryService.createUserQuery("Andrés", "Rodríguez", ingenieroSourdeauxZone.getId(), LocalDate.now().minusDays(9), "Consulta sobre disponibilidad en enero", "1198765432");
 			userQueryService.createUserQuery("Gabriela", "Mendoza", joseCPazZone.getId(), LocalDate.now().minusDays(10), "Consulta sobre opciones para adultos", "1134987654");
-			userQueryService.createUserQuery("Tomás", "Silva", villaRosaZone.getId(), LocalDate.now().minusDays(11), "Consulta sobre precios de inflables de agua", "1143567890");
+			userQueryService.createUserQuery("Tomás", "Silva", joseCPazZone.getId(), LocalDate.now().minusDays(11), "Consulta sobre precios de inflables de agua", "1143567890");
 			userQueryService.createUserQuery("Valeria", "Ortega", tortuguitasZone.getId(), LocalDate.now().minusDays(12), "Consulta sobre métodos de pago", "1135674321");
 			userQueryService.createUserQuery("Pablo", "Romero", grandBourgZone.getId(), LocalDate.now().minusDays(13), "Consulta sobre cantidad de inflables disponibles", "1123478901");
 			userQueryService.createUserQuery("Natalia", "Quintero", tierrasAltasZone.getId(), LocalDate.now().minusDays(14), "Consulta sobre instalación incluida", "1187654321");
