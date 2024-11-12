@@ -3,7 +3,7 @@ import { CanActivateFn, RouteConfigLoadEnd, Router } from '@angular/router';
 import { Observable, catchError, map, of, retry, tap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
-export const adminGuard: CanActivateFn = (route, state) => {
+export const AdminGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);
   const router = inject(Router);
 

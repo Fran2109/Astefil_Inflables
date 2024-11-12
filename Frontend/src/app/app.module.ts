@@ -51,6 +51,7 @@ import { CoverageZoneComponent } from './components/coverage-zone/coverage-zone.
 import { CreateZoneComponent } from './components/create-zone/create-zone.component';
 import { ConfirmDeleteZoneComponent } from './components/confirm-delete-zone/confirm-delete-zone.component';
 import { EditZoneComponent } from './components/edit-zone/edit-zone.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { EditZoneComponent } from './components/edit-zone/edit-zone.component';
     CoverageZoneComponent,
     CreateZoneComponent,
     ConfirmDeleteZoneComponent,
-    EditZoneComponent
+    EditZoneComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

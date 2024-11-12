@@ -9,6 +9,9 @@ import { ContactComponent } from './components/contact/contact.component';
 import { ConsultationsTableComponent } from './components/consultations-table/consultations-table.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 import { CoverageZoneComponent } from './components/coverage-zone/coverage-zone.component';
+import { AdminGuard } from './guards/admin/admin.guard';
+import { EmployeeGuard } from './guards/employee/employee.guard';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -16,9 +19,10 @@ const routes: Routes = [
   { path: 'articles/:id', component: ArticleDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'consultations', component: ConsultationsTableComponent },
-  { path: 'employees', component: EmployeesTableComponent },
+  { path: 'consultations', component: ConsultationsTableComponent, canActivate: [EmployeeGuard] },
+  { path: 'employees', component: EmployeesTableComponent, canActivate: [AdminGuard] },
   { path: 'coverage_zones', component: CoverageZoneComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
