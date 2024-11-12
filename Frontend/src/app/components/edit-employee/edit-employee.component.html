@@ -1,0 +1,75 @@
+<h2 mat-dialog-title>Editar Empleado</h2>
+<form [formGroup]="editEmployeeForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content>
+        <!-- Campo de Correo Electrónico -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Correo Electrónico</mat-label>
+            <input matInput formControlName="username" type="email" required />
+            <mat-error
+                *ngIf="editEmployeeForm.get('username')?.hasError('required')"
+            >
+                Este campo es obligatorio
+            </mat-error>
+            <mat-error
+                *ngIf="editEmployeeForm.get('username')?.hasError('email')"
+            >
+                Formato de correo no válido
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Campo de Nueva Contraseña -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Nueva Contraseña</mat-label>
+            <input
+                matInput
+                formControlName="password"
+                type="password"
+                required
+            />
+            <mat-error
+                *ngIf="editEmployeeForm.get('password')?.hasError('required')"
+            >
+                Este campo es obligatorio
+            </mat-error>
+            <mat-error
+                *ngIf="editEmployeeForm.get('password')?.hasError('minlength')"
+            >
+                La contraseña debe tener al menos 8 caracteres
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Campo de Confirmar Nueva Contraseña -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Repetir Nueva Contraseña</mat-label>
+            <input
+                matInput
+                formControlName="confirmPassword"
+                type="password"
+                required
+            />
+            <mat-error
+                *ngIf="
+                    editEmployeeForm
+                        .get('confirmPassword')
+                        ?.hasError('required')
+                "
+            >
+                Este campo es obligatorio
+            </mat-error>
+            <mat-error *ngIf="editEmployeeForm.hasError('passwordMismatch')">
+                Las contraseñas no coinciden
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onClose()">Cancelar</button>
+        <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="editEmployeeForm.invalid"
+        >
+            Guardar
+        </button>
+    </div>
+</form>

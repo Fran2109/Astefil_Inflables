@@ -45,6 +45,8 @@ import { ConsultationsTableComponent } from './components/consultations-table/co
 import { ReplyConsultationModalComponent } from './components/reply-consultation-modal/reply-consultation-modal.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { ConfirmDeleteEmployeeComponent } from './components/confirm-delete-employee/confirm-delete-employee.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { CreateEmployeeComponent } from './components/create-employee/create-emp
     ConsultationsTableComponent,
     ReplyConsultationModalComponent,
     EmployeesTableComponent,
-    CreateEmployeeComponent
+    CreateEmployeeComponent,
+    EditEmployeeComponent,
+    ConfirmDeleteEmployeeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,38 @@
+.full-width {
+    width: 100%;
+}
+
+mat-dialog-content {
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+button {
+    min-width: 100px;
+}
+
+mat-form-field {
+    margin-bottom: 15px;
+}
+
+button[mat-button] {
+    color: #f44336;
+}
+
+button[mat-raised-button] {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+button[mat-raised-button]:hover {
+    background-color: #45a049;
+}

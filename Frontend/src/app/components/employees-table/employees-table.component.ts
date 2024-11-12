@@ -5,6 +5,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { UserService } from 'src/app/services/user/user.service';
 import { CreateEmployeeComponent } from '../create-employee/create-employee.component';
 import { MatDialog } from '@angular/material/dialog';
+import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
+import { ConfirmDeleteEmployeeComponent } from '../confirm-delete-employee/confirm-delete-employee.component';
 
 @Component({
   selector: 'app-employees-table',
@@ -13,7 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class EmployeesTableComponent implements OnInit, AfterViewInit {
   employees = new MatTableDataSource<any>();
-  displayedColumns: string[] = ['username'];
+  displayedColumns: string[] = ['id', 'username', 'actions'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -42,7 +44,33 @@ export class EmployeesTableComponent implements OnInit, AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.ngOnInit();
+        this.loadEmployees();
+      }
+    });
+  }
+
+  openEditEmployeeModal(employee: any): void {
+    const dialogRef = this.dialog.open(EditEmployeeComponent, {
+      width: '400px',
+      data: { employee }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.loadEmployees();
+      }
+    });
+  }
+
+  openDeleteEmployeeModal(employee: any): void {
+    const dialogRef = this.dialog.open(ConfirmDeleteEmployeeComponent, {
+      width: '400px',
+      data: { employee }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.loadEmployees();
       }
     });
   }
