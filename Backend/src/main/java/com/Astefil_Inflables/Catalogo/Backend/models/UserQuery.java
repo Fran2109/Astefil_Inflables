@@ -31,7 +31,7 @@ public class UserQuery {
     private LocalDate date;
 
     @NotNull(message = "Date is required")
-    private LocalDateTime createdDateTime = LocalDateTime.now();  // Date and time of query creation
+    private LocalDateTime createdDateTime = LocalDateTime.now();
 
     private LocalDateTime answeredDateTime;
 

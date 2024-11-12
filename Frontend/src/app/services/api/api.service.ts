@@ -104,6 +104,14 @@ export class ApiService {
     return this.http.post<Zone>(this._baseUrl + "zone", zoneData);
   }
 
+  deleteZone(zoneId: number): Observable<void> {
+    return this.http.delete<void>(this._baseUrl + "zone/" + zoneId);
+  }
+
+  updateZone(zoneId: number, zoneData: Zone): Observable<Zone> {
+    return this.http.put<Zone>(this._baseUrl + "zone/" + zoneId, zoneData);
+  }
+
   sendContactQuery(userQuery: UserQuery): Observable<UserQuery> {
     return this.http.post<UserQuery>(this._baseUrl + "user_query", userQuery);
   }

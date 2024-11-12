@@ -17,4 +17,12 @@ export class ZoneService {
     return this.apiService.createZone(zoneData);
   }
 
+  deleteZone(zoneId: number): Observable<void> {
+    return this.apiService.deleteZone(zoneId);
+  }
+
+  updateZone(zoneId: number, zoneData: Zone): Observable<Zone> {
+    return this.apiService.updateZone(zoneId, zoneData);
+  }
+
 }

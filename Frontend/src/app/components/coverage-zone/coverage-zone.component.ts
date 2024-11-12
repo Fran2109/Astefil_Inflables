@@ -3,6 +3,7 @@ import * as L from 'leaflet';
 import { ZoneService } from 'src/app/services/zone/zone.service';
 import { CreateZoneComponent } from '../create-zone/create-zone.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDeleteZoneComponent } from '../confirm-delete-zone/confirm-delete-zone.component';
 
 @Component({
   selector: 'app-coverage-zone',
@@ -45,6 +46,19 @@ export class CoverageZoneComponent implements OnInit {
   openCreateZoneModal(): void {
     const dialogRef = this.dialog.open(CreateZoneComponent, {
       width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.loadZones();
+      }
+    });
+  }
+
+  openDeleteZoneModal(zone: any): void {
+    const dialogRef = this.dialog.open(ConfirmDeleteZoneComponent, {
+      width: '400px',
+      data: { zone }
     });
 
     dialogRef.afterClosed().subscribe(result => {

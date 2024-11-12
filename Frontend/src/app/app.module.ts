@@ -49,6 +49,7 @@ import { EditEmployeeComponent } from './components/edit-employee/edit-employee.
 import { ConfirmDeleteEmployeeComponent } from './components/confirm-delete-employee/confirm-delete-employee.component';
 import { CoverageZoneComponent } from './components/coverage-zone/coverage-zone.component';
 import { CreateZoneComponent } from './components/create-zone/create-zone.component';
+import { ConfirmDeleteZoneComponent } from './components/confirm-delete-zone/confirm-delete-zone.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { CreateZoneComponent } from './components/create-zone/create-zone.compon
     EditEmployeeComponent,
     ConfirmDeleteEmployeeComponent,
     CoverageZoneComponent,
-    CreateZoneComponent
+    CreateZoneComponent,
+    ConfirmDeleteZoneComponent
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,16 @@
             Agregar Nueva Zona
         </button>
         <ul>
-            <li *ngFor="let zone of zones">{{ zone.name }}</li>
+            <li *ngFor="let zone of zones">
+                {{ zone.name
+                }}<button
+                    mat-icon-button
+                    color="warn"
+                    (click)="openDeleteZoneModal(zone)"
+                >
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </li>
         </ul>
     </div>
 </div>
