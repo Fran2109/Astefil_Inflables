@@ -6,6 +6,7 @@
     <div class="coverage-zones-list">
         <h2>Zonas de Cobertura</h2>
         <button
+            *ngIf="isAdmin$ | async"
             mat-raised-button
             color="primary"
             (click)="openCreateZoneModal()"
@@ -16,6 +17,7 @@
             <li *ngFor="let zone of zones">
                 {{ zone.name }}
                 <button
+                    *ngIf="isAdmin$ | async"
                     mat-icon-button
                     color="accent"
                     (click)="openEditZoneModal(zone)"
@@ -23,6 +25,7 @@
                     <mat-icon>edit</mat-icon>
                 </button>
                 <button
+                    *ngIf="isAdmin$ | async"
                     mat-icon-button
                     color="warn"
                     (click)="openDeleteZoneModal(zone)"

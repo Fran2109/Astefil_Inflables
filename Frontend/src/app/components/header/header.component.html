@@ -23,27 +23,33 @@
                     >Zonas de Covertura</a
                 >
                 <a
+                    *ngIf="isEmployeeOrAdmin$ | async"
                     mat-tab-link
                     routerLink="/consultations"
                     routerLinkActive="active"
                     >Consultas</a
                 ><a
+                    *ngIf="isAdmin$ | async"
                     mat-tab-link
                     routerLink="/employees"
                     routerLinkActive="active"
                     >Empleados</a
                 >
                 <a
-                    *ngIf="!isLoggedIn"
+                    *ngIf="!(isLoggedIn$ | async)"
                     mat-tab-link
                     routerLink="/login"
                     routerLinkActive="active"
                     >Log In</a
                 >
-                <button *ngIf="isLoggedIn" mat-tab-link>
-                    {{ username }}
+                <button *ngIf="isLoggedIn$ | async" mat-tab-link>
+                    {{ username$ | async }}
                 </button>
-                <button *ngIf="isLoggedIn" mat-tab-link (click)="logout()">
+                <button
+                    *ngIf="isLoggedIn$ | async"
+                    mat-tab-link
+                    (click)="logout()"
+                >
                     Log Out
                 </button>
             </nav>

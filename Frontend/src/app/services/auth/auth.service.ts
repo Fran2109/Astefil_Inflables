@@ -71,4 +71,24 @@ export class AuthService {
     this.setUserData({});
     this.setLoggedInStatus(false);
   }
+
+  isAdmin(): Observable<boolean> {
+    return this.userData$.pipe(
+      map(userData => userData?.role?.name === 'ADMIN')
+    );
+  }
+
+  isEmployeeOrAdmin(): Observable<boolean> {
+    return this.userData$.pipe(
+      map(userData => userData?.role?.name === 'EMPLOYEE' || userData?.role?.name === 'ADMIN')
+    );
+  }
+
+  isLoggedIn(): Observable<boolean> {
+    return this.isLoggedIn$;
+  }
+
+  username(): Observable<string> {
+    return this.userData$.pipe(map(userData => userData?.username ?? ''));
+  }
 }

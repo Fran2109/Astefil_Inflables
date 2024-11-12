@@ -5,6 +5,8 @@ import { CreateZoneComponent } from '../create-zone/create-zone.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDeleteZoneComponent } from '../confirm-delete-zone/confirm-delete-zone.component';
 import { EditZoneComponent } from '../edit-zone/edit-zone.component';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-coverage-zone',
@@ -15,15 +17,17 @@ export class CoverageZoneComponent implements OnInit {
   map!: L.Map;
   zones: any[] = [];
   markers: L.Marker[] = [];
+  isAdmin$: Observable<boolean> | undefined;
 
   private originLatLng: L.LatLngExpression = [-34.47102820314736, -58.759375465040044];
   private originZoom: number = 12;
 
-  constructor(private dialog: MatDialog, private zoneService: ZoneService) { }
+  constructor(private dialog: MatDialog, private zoneService: ZoneService, private authService: AuthService) { }
 
   ngOnInit(): void {
     this.initializeMap();
     this.loadZones();
+    this.isAdmin$ = this.authService.isAdmin();
   }
 
   initializeMap(): void {

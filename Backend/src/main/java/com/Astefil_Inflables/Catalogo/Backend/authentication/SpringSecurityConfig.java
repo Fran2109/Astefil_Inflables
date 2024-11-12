@@ -30,7 +30,19 @@ public class SpringSecurityConfig {
                 .cors(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/**").permitAll()
+                        .requestMatchers("/api/admin/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/article/**").permitAll()
+                        .requestMatchers("/api/article/**").hasAuthority("ADMIN")
+                        .requestMatchers("/api/auth/login/**").permitAll()
+                        .requestMatchers(HttpMethod.GET,"/api/category/**").permitAll()
+                        .requestMatchers("/api/category/**").hasAuthority("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"/api/image/**").permitAll()
+                        .requestMatchers("/api/image/**").hasAuthority("ADMIN")
+                        .requestMatchers("/api/user/**").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/api/user_query/**").permitAll()
+                        .requestMatchers("/api/user_query/**").hasAnyAuthority("ADMIN", "EMPLOYEE")
+                        .requestMatchers(HttpMethod.GET,"/api/zone/**").permitAll()
+                        .requestMatchers("/api/zone/**").hasAuthority("ADMIN")
                         .anyRequest().authenticated()
                 );
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

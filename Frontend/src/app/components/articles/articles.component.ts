@@ -11,6 +11,8 @@ import { EditCategoryComponent } from '../edit-category/edit-category.component'
 import { CreateArticleComponent } from '../create-article/create-article.component';
 import { ConfirmDeleteArticleComponent } from '../confirm-delete-article/confirm-delete-article.component';
 import { EditArticleComponent } from '../edit-article/edit-article.component';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-articles',
@@ -22,9 +24,9 @@ export class ArticlesComponent implements OnInit {
   categories: any[] = [];
   articles: any[] = [];
   selectedCategory: any;
+  isAdmin$: Observable<boolean> | undefined;
 
-
-  constructor(private articleService: ArticleService, private categoryService: CategoryService, private router: Router, private dialog: MatDialog) { }
+  constructor(private articleService: ArticleService, private categoryService: CategoryService, private router: Router, private dialog: MatDialog, private authService: AuthService) { }
 
   ngOnInit() {
     this.loading = true;
@@ -33,6 +35,7 @@ export class ArticlesComponent implements OnInit {
       this.selectCategory(this.categories[0]);
       this.loading = false;
     });
+    this.isAdmin$ = this.authService.isAdmin();
   }
 
   selectCategory(category: any) {
@@ -149,5 +152,4 @@ export class ArticlesComponent implements OnInit {
       }
     });
   }
-
 }

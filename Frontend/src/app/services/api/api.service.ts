@@ -20,11 +20,11 @@ export class ApiService {
   }
 
   addCategory(category: Category): Observable<Category> {
-    return this.http.post<Category>(this._baseUrl + 'category', category);
+    return this.http.post<Category>(this._baseUrl + 'category', category, this.getAuthHeader());
   }
 
   deleteCategory(id: number): Observable<void> {
-    return this.http.delete<void>(this._baseUrl + 'category/' + id);
+    return this.http.delete<void>(this._baseUrl + 'category/' + id, this.getAuthHeader());
   }
 
   getAllArticles(): Observable<Article[]> {
@@ -48,33 +48,35 @@ export class ApiService {
   }
 
   updateCategory(category: Category): Observable<Category> {
-    return this.http.put<Category>(this._baseUrl + 'category/' + category.id, category);
+    return this.http.put<Category>(this._baseUrl + 'category/' + category.id, category, this.getAuthHeader());
   }
 
   incrementCategoryOrder(id: number): Observable<Category> {
     return this.http.put(
       this._baseUrl + "category/" + id + "/incrementOrderNumber",
-      {}
+      {},
+      this.getAuthHeader()
     );
   }
 
   decrementCategoryOrder(id: number): Observable<Category> {
     return this.http.put(
       this._baseUrl + "category/" + id + "/decrementOrderNumber",
-      {}
+      {},
+      this.getAuthHeader()
     );
   }
 
   addArticle(articleData: FormData): Observable<Article> {
-    return this.http.post<Article>(`${this._baseUrl}article`, articleData);
+    return this.http.post<Article>(`${this._baseUrl}article`, articleData, this.getAuthHeader());
   }
 
   deleteArticle(articleId: number): Observable<void> {
-    return this.http.delete<void>(`${this._baseUrl}article/${articleId}`);
+    return this.http.delete<void>(`${this._baseUrl}article/${articleId}`, this.getAuthHeader());
   }
 
   updateArticle(articleId: number, articleData: Article): Observable<Article> {
-    return this.http.put<Article>(`${this._baseUrl}article/${articleId}`, articleData);
+    return this.http.put<Article>(`${this._baseUrl}article/${articleId}`, articleData, this.getAuthHeader());
   }
 
   getToken(): string | null {
@@ -101,15 +103,15 @@ export class ApiService {
   }
 
   createZone(zoneData: Zone): Observable<Zone> {
-    return this.http.post<Zone>(this._baseUrl + "zone", zoneData);
+    return this.http.post<Zone>(this._baseUrl + "zone", zoneData, this.getAuthHeader());
   }
 
   deleteZone(zoneId: number): Observable<void> {
-    return this.http.delete<void>(this._baseUrl + "zone/" + zoneId);
+    return this.http.delete<void>(this._baseUrl + "zone/" + zoneId, this.getAuthHeader());
   }
 
   updateZone(zoneId: number, zoneData: Zone): Observable<Zone> {
-    return this.http.put<Zone>(this._baseUrl + "zone/" + zoneId, zoneData);
+    return this.http.put<Zone>(this._baseUrl + "zone/" + zoneId, zoneData, this.getAuthHeader());
   }
 
   sendContactQuery(userQuery: UserQuery): Observable<UserQuery> {
@@ -117,7 +119,7 @@ export class ApiService {
   }
 
   getUserQuerys(): Observable<UserQuery[]> {
-    return this.http.get<UserQuery[]>(this._baseUrl + "user_query");
+    return this.http.get<UserQuery[]>(this._baseUrl + "user_query", this.getAuthHeader());
   }
 
   replyToConsultation(consultationId: number): Observable<void> {

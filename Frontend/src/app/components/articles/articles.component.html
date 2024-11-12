@@ -5,6 +5,7 @@
             <div class="categories-sidebar">
                 <h3>Categorías</h3>
                 <button
+                    *ngIf="isAdmin$ | async"
                     mat-raised-button
                     color="primary"
                     (click)="openCreateCategoryModal()"
@@ -19,6 +20,7 @@
                     >
                         {{ category.name }}
                         <button
+                            *ngIf="isAdmin$ | async"
                             mat-icon-button
                             color="warn"
                             (click)="openDeleteCategoryModal(category)"
@@ -26,6 +28,7 @@
                             <mat-icon>delete</mat-icon>
                         </button>
                         <button
+                            *ngIf="isAdmin$ | async"
                             mat-icon-button
                             color="primary"
                             (click)="openEditCategoryModal(category)"
@@ -33,6 +36,7 @@
                             <mat-icon>edit</mat-icon>
                         </button>
                         <button
+                            *ngIf="isAdmin$ | async"
                             mat-icon-button
                             color="primary"
                             (click)="decrementCategoryOrder(category.id)"
@@ -41,6 +45,7 @@
                             <mat-icon>arrow_upward</mat-icon>
                         </button>
                         <button
+                            *ngIf="isAdmin$ | async"
                             mat-icon-button
                             color="primary"
                             (click)="incrementCategoryOrder(category.id)"
@@ -57,6 +62,7 @@
                 <div class="articles-header">
                     <h2>{{ selectedCategory?.name }}</h2>
                     <button
+                        *ngIf="isAdmin$ | async"
                         mat-raised-button
                         color="primary"
                         (click)="openAddArticleModal()"
@@ -84,6 +90,7 @@
                             Más Información
                         </button>
                         <button
+                            *ngIf="isAdmin$ | async"
                             mat-raised-button
                             color="accent"
                             (click)="openEditArticleModal(article.id)"
@@ -91,6 +98,7 @@
                             Editar
                         </button>
                         <button
+                            *ngIf="isAdmin$ | async"
                             mat-raised-button
                             color="warn"
                             (click)="
