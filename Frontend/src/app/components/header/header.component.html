@@ -15,8 +15,17 @@
                 >
                 <a mat-tab-link routerLink="/contact" routerLinkActive="active"
                     >Contacto</a
-                ><a mat-tab-link routerLink="/consultations" routerLinkActive="active"
+                >
+                <a
+                    mat-tab-link
+                    routerLink="/consultations"
+                    routerLinkActive="active"
                     >Consultas</a
+                ><a
+                    mat-tab-link
+                    routerLink="/employees"
+                    routerLinkActive="active"
+                    >Empleados</a
                 >
                 <a
                     *ngIf="!isLoggedIn"

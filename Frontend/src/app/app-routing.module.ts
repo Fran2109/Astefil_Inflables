@@ -7,6 +7,7 @@ import { ArticleDetailComponent } from './components/article-detail/article-deta
 import { LoginComponent } from './components/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ConsultationsTableComponent } from './components/consultations-table/consultations-table.component';
+import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'articles/:id', component: ArticleDetailComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'consultations', component: ConsultationsTableComponent }
+  { path: 'consultations', component: ConsultationsTableComponent },
+  { path: 'employees', component: EmployeesTableComponent },
 ];
 
 @NgModule({

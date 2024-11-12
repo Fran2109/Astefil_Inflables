@@ -43,6 +43,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ConsultationsTableComponent } from './components/consultations-table/consultations-table.component';
 import { ReplyConsultationModalComponent } from './components/reply-consultation-modal/reply-consultation-modal.component';
+import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ReplyConsultationModalComponent } from './components/reply-consultation
     LoginComponent,
     ContactComponent,
     ConsultationsTableComponent,
-    ReplyConsultationModalComponent
+    ReplyConsultationModalComponent,
+    EmployeesTableComponent
   ],
   imports: [
     BrowserModule,

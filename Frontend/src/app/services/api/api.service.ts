@@ -115,4 +115,38 @@ export class ApiService {
       this.getAuthHeader()
     );
   }
+
+  getAllEmployes(): Observable<User[]> {
+    return this.http.get<User[]>(
+      this._baseUrl + "admin/employee",
+      this.getAuthHeader()
+    );
+  }
+
+  postEmployee(username: string, password: string): Observable<User> {
+    return this.http.post<User>(
+      this._baseUrl + "admin/employee",
+      { username, password },
+      this.getAuthHeader()
+    );
+  }
+
+  putEmployee(
+    id: number,
+    username: string,
+    password: string
+  ): Observable<User> {
+    return this.http.put<User>(
+      this._baseUrl + `admin/employee/${id}`,
+      { username, password },
+      this.getAuthHeader()
+    );
+  }
+
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete<any>(
+      this._baseUrl + `admin/employee/${id}`,
+      this.getAuthHeader()
+    );
+  }
 }
