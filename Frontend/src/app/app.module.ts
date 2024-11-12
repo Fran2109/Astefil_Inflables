@@ -48,6 +48,7 @@ import { CreateEmployeeComponent } from './components/create-employee/create-emp
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
 import { ConfirmDeleteEmployeeComponent } from './components/confirm-delete-employee/confirm-delete-employee.component';
 import { CoverageZoneComponent } from './components/coverage-zone/coverage-zone.component';
+import { CreateZoneComponent } from './components/create-zone/create-zone.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { CoverageZoneComponent } from './components/coverage-zone/coverage-zone.
     CreateEmployeeComponent,
     EditEmployeeComponent,
     ConfirmDeleteEmployeeComponent,
-    CoverageZoneComponent
+    CoverageZoneComponent,
+    CreateZoneComponent
   ],
   imports: [
     BrowserModule,

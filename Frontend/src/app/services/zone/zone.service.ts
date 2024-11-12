@@ -13,4 +13,8 @@ export class ZoneService {
     return this.apiService.getAllZones();
   }
 
+  createZone(zoneData: Zone): Observable<Zone> {
+    return this.apiService.createZone(zoneData);
+  }
+
 }

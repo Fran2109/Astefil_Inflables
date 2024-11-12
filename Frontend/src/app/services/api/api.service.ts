@@ -100,6 +100,10 @@ export class ApiService {
     return this.http.get<Zone[]>(this._baseUrl + "zone");
   }
 
+  createZone(zoneData: Zone): Observable<Zone> {
+    return this.http.post<Zone>(this._baseUrl + "zone", zoneData);
+  }
+
   sendContactQuery(userQuery: UserQuery): Observable<UserQuery> {
     return this.http.post<UserQuery>(this._baseUrl + "user_query", userQuery);
   }

@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>Agregar Nueva Zona</h2>
+<form [formGroup]="zoneForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content>
+        <!-- Campo de Nombre -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Nombre de la Zona</mat-label>
+            <input matInput formControlName="name" required />
+            <mat-error *ngIf="zoneForm.get('name')?.hasError('required')">
+                Este campo es obligatorio
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Campo de Latitud -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Latitud</mat-label>
+            <input matInput formControlName="latitude" type="number" required />
+            <mat-error *ngIf="zoneForm.get('latitude')?.hasError('required')">
+                Este campo es obligatorio
+            </mat-error>
+        </mat-form-field>
+
+        <!-- Campo de Longitud -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Longitud</mat-label>
+            <input
+                matInput
+                formControlName="longitude"
+                type="number"
+                required
+            />
+            <mat-error *ngIf="zoneForm.get('longitude')?.hasError('required')">
+                Este campo es obligatorio
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onClose()">Cancelar</button>
+        <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="zoneForm.invalid"
+        >
+            Agregar
+        </button>
+    </div>
+</form>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { ZoneService } from 'src/app/services/zone/zone.service';
+import { CreateZoneComponent } from '../create-zone/create-zone.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-coverage-zone',
@@ -11,7 +13,7 @@ export class CoverageZoneComponent implements OnInit {
   map!: L.Map;
   zones: any[] = [];
 
-  constructor(private zoneService: ZoneService) { }
+  constructor(private dialog: MatDialog, private zoneService: ZoneService) { }
 
   ngOnInit(): void {
     this.initializeMap();
@@ -37,6 +39,18 @@ export class CoverageZoneComponent implements OnInit {
     this.zones.forEach(zone => {
       const marker = L.marker([zone.latitude, zone.longitude]).addTo(this.map);
       marker.bindPopup(`<b>${zone.name}</b>`);
+    });
+  }
+
+  openCreateZoneModal(): void {
+    const dialogRef = this.dialog.open(CreateZoneComponent, {
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.loadZones();
+      }
     });
   }
 }

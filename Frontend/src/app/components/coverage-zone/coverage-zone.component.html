@@ -5,6 +5,13 @@
     <!-- Lista de Zonas de Cobertura -->
     <div class="coverage-zones-list">
         <h2>Zonas de Cobertura</h2>
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="openCreateZoneModal()"
+        >
+            Agregar Nueva Zona
+        </button>
         <ul>
             <li *ngFor="let zone of zones">{{ zone.name }}</li>
         </ul>
