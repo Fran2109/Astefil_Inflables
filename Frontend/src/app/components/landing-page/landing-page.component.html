@@ -1,51 +1,30 @@
 <section class="landing-page">
     <div class="hero-section">
-        <h1>¡Diversión sin límites con nuestros inflables!</h1>
-        <p>
-            Alquila inflables para tus eventos y haz que sean inolvidables.
-            Ofrecemos una gran variedad de inflables para todas las edades y
-            ocasiones.
-        </p>
-        <button mat-raised-button color="accent" routerLink="/articles">
-            Ver Inflables
-        </button>
-    </div>
-    <div class="features-section">
-        <div class="feature">
-            <img src="assets/feature1.png" alt="Variedad de inflables" />
-            <h2>Gran Variedad</h2>
+        <div class="hero-content">
+            <h1>¡Diversión sin límites con nuestros inflables!</h1>
             <p>
-                Contamos con una amplia gama de inflables, desde castillos hasta
-                toboganes, para satisfacer todas tus necesidades.
+                Alquila inflables para tus eventos y haz que sean inolvidables.
+                Ofrecemos una gran variedad de inflables para todas las edades y
+                ocasiones.
             </p>
-        </div>
-        <div class="feature">
-            <img src="assets/feature2.png" alt="Seguridad garantizada" />
-            <h2>Seguridad Garantizada</h2>
-            <p>
-                Nuestros inflables cumplen con todos los estándares de seguridad
-                para que puedas disfrutar sin preocupaciones.
-            </p>
-        </div>
-        <div class="feature">
-            <img src="assets/feature3.png" alt="Precios competitivos" />
-            <h2>Precios Competitivos</h2>
-            <p>
-                Ofrecemos precios accesibles y paquetes especiales para eventos,
-                ajustándonos a tu presupuesto.
-            </p>
+            <button mat-raised-button color="accent" routerLink="/articles">
+                Ver Inflables
+            </button>
         </div>
     </div>
+
     <div class="testimonial-section">
         <h2>Lo que dicen nuestros clientes</h2>
-        <mat-card
-            *ngFor="let testimonial of testimonials"
-            class="testimonial-card"
-        >
-            <mat-card-content>
-                <p>{{ testimonial.message }}</p>
-                <span>- {{ testimonial.author }}</span>
-            </mat-card-content>
-        </mat-card>
+        <div class="testimonials-container">
+            <mat-card
+                *ngFor="let testimonial of testimonials"
+                class="testimonial-card"
+            >
+                <mat-card-content>
+                    <p>{{ testimonial.message }}</p>
+                    <span>- {{ testimonial.author }}</span>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
 </section>
