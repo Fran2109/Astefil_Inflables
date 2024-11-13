@@ -13,7 +13,7 @@ export const EmployeeGuard: CanActivateFn = (route, state) => {
         router.navigate(["/login"]);
         return false;
       }
-      if (user.role?.name !== "EMPLOYEE") {
+      if (user.role?.name !== "EMPLOYEE" && user.role?.name !== "ADMIN") {
         router.navigate(["/login"]);
         return false;
       }
