@@ -113,10 +113,42 @@
     text-align: center;
 }
 
-.card-actions button {
-    font-weight: bold;
+.full-width-button {
+    margin-bottom: 10px;
+}
+
+.full-width-button button {
     width: 100%;
-    max-width: 200px;
-    margin: 0 auto;
-    display: block;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.half-width-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.half-width-buttons button {
+    width: 48%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button mat-icon {
+    margin-right: 5px;
+}
+
+button:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }

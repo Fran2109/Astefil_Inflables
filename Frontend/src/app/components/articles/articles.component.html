@@ -82,35 +82,39 @@
                         <p>{{ article.description }}</p>
                     </div>
                     <div class="card-actions">
-                        <button
-                            mat-raised-button
-                            color="primary"
-                            (click)="viewDetails(article.id)"
-                        >
-                            Más Información
-                        </button>
-                        <button
-                            *ngIf="isAdmin$ | async"
-                            mat-raised-button
-                            color="accent"
-                            (click)="openEditArticleModal(article.id)"
-                        >
-                            Editar
-                        </button>
-                        <button
-                            *ngIf="isAdmin$ | async"
-                            mat-raised-button
-                            color="warn"
-                            (click)="
-                                openDeleteArticleModal(
-                                    article.id,
-                                    article.name,
-                                    article.description
-                                )
-                            "
-                        >
-                            Eliminar
-                        </button>
+                        <div class="full-width-button">
+                            <button
+                                mat-raised-button
+                                color="primary"
+                                (click)="viewDetails(article.id)"
+                            >
+                                <mat-icon>info</mat-icon> Más Información
+                            </button>
+                        </div>
+                        <div class="half-width-buttons">
+                            <button
+                                *ngIf="isAdmin$ | async"
+                                mat-raised-button
+                                color="accent"
+                                (click)="openEditArticleModal(article.id)"
+                            >
+                                <mat-icon>edit</mat-icon> Editar
+                            </button>
+                            <button
+                                *ngIf="isAdmin$ | async"
+                                mat-raised-button
+                                color="warn"
+                                (click)="
+                                    openDeleteArticleModal(
+                                        article.id,
+                                        article.name,
+                                        article.description
+                                    )
+                                "
+                            >
+                                <mat-icon>delete</mat-icon> Eliminar
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
