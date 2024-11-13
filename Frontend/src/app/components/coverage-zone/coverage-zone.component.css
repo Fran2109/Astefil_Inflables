@@ -15,7 +15,29 @@
     width: 30%;
     padding: 20px;
     background-color: #f5f5f5;
+    max-height: 80vh;
+    /* Limita la altura de la lista para que no desborde */
     overflow-y: auto;
+    /* Agrega un scroll vertical cuando se supera el tamaño máximo */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes adicionales para un scroll suave */
+.coverage-zones-list::-webkit-scrollbar {
+    width: 8px;
+    /* Tamaño de la barra de desplazamiento */
+}
+
+.coverage-zones-list::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    /* Color de la barra de desplazamiento */
+    border-radius: 4px;
+}
+
+.coverage-zones-list::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+    /* Color de la barra al pasar el cursor */
 }
 
 .coverage-zones-list h2 {
