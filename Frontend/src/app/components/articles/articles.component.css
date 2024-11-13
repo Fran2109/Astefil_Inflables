@@ -24,16 +24,13 @@
 
 .articles-container {
     display: flex;
+    gap: 20px;
 }
 
 .categories-sidebar {
-    width: 25%;
-    padding-right: 20px;
-}
-
-.categories-sidebar h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    width: 30%;
+    padding-right: 10px;
+    border-right: 1px solid #ddd;
 }
 
 .categories-sidebar ul {
@@ -42,8 +39,11 @@
 }
 
 .categories-sidebar li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    cursor: pointer;
+    border-bottom: 1px solid #ddd;
     transition: background-color 0.2s;
 }
 
@@ -56,8 +56,35 @@
     background-color: #e0e0e0;
 }
 
+.category-name {
+    flex: 1;
+    font-size: 16px;
+}
+
+.category-buttons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.category-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.category-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Cambia el color al hacer hover */
+    transform: scale(1.1);
+    /* Añade un ligero efecto de escala */
+}
+
 .articles-list {
-    width: 75%;
+    width: 70%;
 }
 
 .articles-list h2 {

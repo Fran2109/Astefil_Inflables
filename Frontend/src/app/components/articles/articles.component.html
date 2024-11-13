@@ -18,46 +18,49 @@
                         (click)="selectCategory(category)"
                         [class.active]="category.id === selectedCategory?.id"
                     >
-                        {{ category.name }}
-                        <button
-                            *ngIf="isAdmin$ | async"
-                            mat-icon-button
-                            color="warn"
-                            (click)="openDeleteCategoryModal(category)"
-                        >
-                            <mat-icon>delete</mat-icon>
-                        </button>
-                        <button
-                            *ngIf="isAdmin$ | async"
-                            mat-icon-button
-                            color="primary"
-                            (click)="openEditCategoryModal(category)"
-                        >
-                            <mat-icon>edit</mat-icon>
-                        </button>
-                        <button
-                            *ngIf="isAdmin$ | async"
-                            mat-icon-button
-                            color="primary"
-                            (click)="decrementCategoryOrder(category.id)"
-                            [disabled]="category.orderNumber == 1"
-                        >
-                            <mat-icon>arrow_upward</mat-icon>
-                        </button>
-                        <button
-                            *ngIf="isAdmin$ | async"
-                            mat-icon-button
-                            color="primary"
-                            (click)="incrementCategoryOrder(category.id)"
-                            [disabled]="
-                                category.orderNumber == categories.length
-                            "
-                        >
-                            <mat-icon>arrow_downward</mat-icon>
-                        </button>
+                        <span class="category-name">{{ category.name }}</span>
+                        <div class="category-buttons">
+                            <button
+                                *ngIf="isAdmin$ | async"
+                                mat-icon-button
+                                color="primary"
+                                (click)="openEditCategoryModal(category)"
+                            >
+                                <mat-icon>edit</mat-icon>
+                            </button>
+                            <button
+                                *ngIf="isAdmin$ | async"
+                                mat-icon-button
+                                color="warn"
+                                (click)="openDeleteCategoryModal(category)"
+                            >
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                            <button
+                                *ngIf="isAdmin$ | async"
+                                mat-icon-button
+                                color="primary"
+                                (click)="decrementCategoryOrder(category.id)"
+                                [disabled]="category.orderNumber == 1"
+                            >
+                                <mat-icon>arrow_upward</mat-icon>
+                            </button>
+                            <button
+                                *ngIf="isAdmin$ | async"
+                                mat-icon-button
+                                color="primary"
+                                (click)="incrementCategoryOrder(category.id)"
+                                [disabled]="
+                                    category.orderNumber == categories.length
+                                "
+                            >
+                                <mat-icon>arrow_downward</mat-icon>
+                            </button>
+                        </div>
                     </li>
                 </ul>
             </div>
+
             <div class="articles-list">
                 <div class="articles-header">
                     <h2>{{ selectedCategory?.name }}</h2>
