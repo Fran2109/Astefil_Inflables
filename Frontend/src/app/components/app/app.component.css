@@ -9,11 +9,6 @@ body {
     flex-direction: column;
 }
 
-.main-content {
-    flex: 1;
-
-}
-
 .main-container {
-    min-height: calc(100vh - 300px);
+    flex: 1;
 }
