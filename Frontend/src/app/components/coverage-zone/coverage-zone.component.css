@@ -29,10 +29,45 @@
 }
 
 .coverage-zones-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 18px;
     margin: 10px 0;
     padding: 10px;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+.coverage-zones-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.zone-name {
+    flex: 1;
+}
+
+.zone-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.zone-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.zone-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+}
+
+.zone-buttons button mat-icon {
+    font-size: 1.2em;
 }

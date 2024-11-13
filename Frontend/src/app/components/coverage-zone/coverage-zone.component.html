@@ -15,23 +15,25 @@
         </button>
         <ul>
             <li *ngFor="let zone of zones">
-                {{ zone.name }}
-                <button
-                    *ngIf="isAdmin$ | async"
-                    mat-icon-button
-                    color="accent"
-                    (click)="openEditZoneModal(zone)"
-                >
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <button
-                    *ngIf="isAdmin$ | async"
-                    mat-icon-button
-                    color="warn"
-                    (click)="openDeleteZoneModal(zone)"
-                >
-                    <mat-icon>delete</mat-icon>
-                </button>
+                <span class="zone-name">{{ zone.name }}</span>
+                <div class="zone-buttons">
+                    <button
+                        *ngIf="isAdmin$ | async"
+                        mat-icon-button
+                        color="accent"
+                        (click)="openEditZoneModal(zone)"
+                    >
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button
+                        *ngIf="isAdmin$ | async"
+                        mat-icon-button
+                        color="warn"
+                        (click)="openDeleteZoneModal(zone)"
+                    >
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
             </li>
         </ul>
     </div>
