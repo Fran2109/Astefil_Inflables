@@ -41,6 +41,20 @@
         </div>
 
         <div
+            class="dimensions-section"
+            *ngIf="
+                selectedArticle.height &&
+                selectedArticle.width &&
+                selectedArticle.length
+            "
+        >
+            <h3>Dimensiones</h3>
+            <p>Alto: {{ selectedArticle.height }} m</p>
+            <p>Ancho: {{ selectedArticle.width }} m</p>
+            <p>Largo: {{ selectedArticle.length }} m</p>
+        </div>
+
+        <div
             class="related-articles-section"
             *ngIf="relatedArticles.length > 0"
         >
@@ -63,8 +77,7 @@
                             mat-button
                             color="accent"
                             (click)="
-                                article.id !== undefined &&
-                                    viewDetails(article.id)
+                                article.id ? viewDetails(article.id) : null
                             "
                         >
                             Ver Más

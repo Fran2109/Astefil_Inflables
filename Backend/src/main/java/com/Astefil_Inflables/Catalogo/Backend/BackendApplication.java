@@ -67,104 +67,104 @@ public class BackendApplication {
 			// Create default castillos articles
 			Article hombreArania = articleService.createArticle(
 					"Hombre Araña",
-					"¡Vive la emoción y trepa junto al Hombre Araña! Este castillo te hará sentir como un auténtico superhéroe con un diseño increíble para los fanáticos de Spidey. Ideal para fiestas llenas de aventuras.",
-					(float) 1, (float) 1, (float) 1, castillosCategory, hombreAraniaImages
+					"¡Vive la emoción y trepa junto al Hombre Araña! Este castillo de 4x5 metros te hará sentir como un auténtico superhéroe con un diseño increíble para los fanáticos de Spidey. Ideal para fiestas llenas de aventuras.",
+					4.0f, 5.0f, 2.5f, castillosCategory, hombreAraniaImages
 			);
 			Article princesas = articleService.createArticle(
 					"Princesas",
-					"Un castillo mágico para las reinas y princesas de la casa. Déjate llevar por la fantasía y la diversión en un mundo de ensueño, lleno de colores y detalles reales. Perfecto para fiestas de cuentos de hadas.",
-					(float) 1, (float) 1, (float) 1, castillosCategory, princesasImages
+					"Un castillo mágico de 3x4 metros para las reinas y princesas de la casa. Déjate llevar por la fantasía y la diversión en un mundo de ensueño, lleno de colores y detalles reales. Perfecto para fiestas de cuentos de hadas.",
+					3.0f, 4.0f, 2.5f, castillosCategory, princesasImages
 			);
 			Article tresPorSeis = articleService.createArticle(
 					"3x6",
 					"Un castillo amplio y divertido de 3x6 metros para la mejor experiencia de rebote y juegos. Perfecto para grupos grandes y eventos en los que la diversión no puede faltar.",
-					(float) 1, (float) 1, (float) 1, castillosCategory, tresPorSeisImages
+					3.0f, 6.0f, 2.8f, castillosCategory, tresPorSeisImages
 			);
 			Article cuatroPorCinco = articleService.createArticle(
 					"4x5",
 					"Diversión compacta y segura en un castillo de 4x5 metros. Espacio suficiente para saltar, reír y disfrutar durante horas. Ideal para celebraciones en familia o con amigos.",
-					(float) 1, (float) 1, (float) 1, castillosCategory, cuatroPorCincoImages
+					4.0f, 5.0f, 2.5f, castillosCategory, cuatroPorCincoImages
 			);
 			Article dosPorDos = articleService.createArticle(
 					"2x2",
-					"El castillo más compacto para los espacios reducidos, pero igual de divertido. Perfecto para fiestas pequeñas o interiores donde los más pequeños pueden disfrutar sin parar.",
-					(float) 1, (float) 1, (float) 1, castillosCategory, dosPorDosImages
+					"El castillo más compacto de 2x2 metros para espacios reducidos, pero igual de divertido. Perfecto para fiestas pequeñas o interiores donde los más pequeños pueden disfrutar sin parar.",
+					2.0f, 2.0f, 2.0f, castillosCategory, dosPorDosImages
 			);
 
-			// Create default gigantes articles
+// Create default gigantes articles
 			Article demoledor = articleService.createArticle(
 					"Demoledor",
-					"¡El gigante Demoledor llega para desafiar a los más valientes! Sus dimensiones colosales harán de tu evento una experiencia inolvidable. ¡Atrévete a saltar en esta máquina de emociones!",
-					(float) 1, (float) 1, (float) 1, gigantesCategory, demoledorImages
+					"¡El gigante Demoledor de 6x8 metros llega para desafiar a los más valientes! Sus dimensiones colosales harán de tu evento una experiencia inolvidable. ¡Atrévete a saltar en esta máquina de emociones!",
+					6.0f, 8.0f, 3.5f, gigantesCategory, demoledorImages
 			);
 			Article arcoiris = articleService.createArticle(
 					"Arcoiris",
-					"Sumérgete en un arcoíris de alegría y diversión con este gigante inflable. Perfecto para añadir color y energía a cualquier evento, ¡los niños lo adorarán!",
-					(float) 1, (float) 1, (float) 1, gigantesCategory, arcoirisImages
+					"Sumérgete en un arcoíris de alegría y diversión con este gigante inflable de 5x7 metros. Perfecto para añadir color y energía a cualquier evento, ¡los niños lo adorarán!",
+					5.0f, 7.0f, 3.2f, gigantesCategory, arcoirisImages
 			);
 			Article carreraDeObstaculos = articleService.createArticle(
 					"Carrera de obstáculos",
-					"¡Prepárate para una competencia llena de adrenalina! Este inflable tipo carrera de obstáculos garantiza emoción y diversión en cada salto y curva. Ideal para eventos deportivos y desafíos grupales.",
-					(float) 1, (float) 1, (float) 1, gigantesCategory, carreraDeObstaculosImages
+					"¡Prepárate para una competencia de 6x10 metros llena de adrenalina! Este inflable tipo carrera de obstáculos garantiza emoción y diversión en cada salto y curva. Ideal para eventos deportivos y desafíos grupales.",
+					6.0f, 10.0f, 3.5f, gigantesCategory, carreraDeObstaculosImages
 			);
 			Article barcoPirata = articleService.createArticle(
 					"Barco Pirata",
-					"¡A la aventura, marineros! Con este barco pirata inflable, los niños podrán surcar mares imaginarios y vivir historias de tesoros escondidos. Perfecto para los pequeños exploradores.",
-					(float) 1, (float) 1, (float) 1, gigantesCategory, barcoPirataImages
+					"¡A la aventura, marineros! Con este barco pirata inflable de 4x6 metros, los niños podrán surcar mares imaginarios y vivir historias de tesoros escondidos. Perfecto para los pequeños exploradores.",
+					4.0f, 6.0f, 3.0f, gigantesCategory, barcoPirataImages
 			);
 
-			// Create default acuaticos articles
+// Create default acuaticos articles
 			Article deslizador = articleService.createArticle(
 					"Deslizador",
-					"Deslízate hacia la diversión con este inflable acuático que refrescará cualquier día caluroso. Ideal para fiestas en el verano y momentos de aventura acuática.",
-					(float) 1, (float) 1, (float) 1, acuaticosCategory, deslizadorImages
+					"Deslízate hacia la diversión con este inflable acuático de 3x8 metros que refrescará cualquier día caluroso. Ideal para fiestas en el verano y momentos de aventura acuática.",
+					3.0f, 8.0f, 2.5f, acuaticosCategory, deslizadorImages
 			);
 			Article rampaAcuaticaArco = articleService.createArticle(
 					"Rampa acuática arco",
-					"La rampa acuática en forma de arco es una atracción espectacular para niños y adultos. ¡Deslízate con velocidad y frescura en este tobogán que hace que el verano sea inolvidable!",
-					(float) 1, (float) 1, (float) 1, acuaticosCategory, rampaAcuaticaArcoImages
+					"La rampa acuática en forma de arco de 4x10 metros es una atracción espectacular para niños y adultos. ¡Deslízate con velocidad y frescura en este tobogán que hace que el verano sea inolvidable!",
+					4.0f, 10.0f, 3.0f, acuaticosCategory, rampaAcuaticaArcoImages
 			);
 			Article rampaAcuatica = articleService.createArticle(
 					"Rampa acuática",
-					"Una clásica rampa acuática que brinda pura diversión. Perfecta para días soleados y eventos al aire libre, donde todos podrán disfrutar de una refrescante aventura.",
-					(float) 1, (float) 1, (float) 1, acuaticosCategory, rampaAcuaticaImages
+					"Una clásica rampa acuática de 3x8 metros que brinda pura diversión. Perfecta para días soleados y eventos al aire libre, donde todos podrán disfrutar de una refrescante aventura.",
+					3.0f, 8.0f, 2.5f, acuaticosCategory, rampaAcuaticaImages
 			);
 			Article toboganAcuatico = articleService.createArticle(
 					"Tobogán acuático",
-					"El tobogán acuático es el rey de las atracciones veraniegas. Una experiencia de emoción, velocidad y frescura que asegura que todos tengan un recuerdo inolvidable.",
-					(float) 1, (float) 1, (float) 1, acuaticosCategory, toboganAcuaticoImages
+					"El tobogán acuático es el rey de las atracciones veraniegas. Con sus 4x9 metros, asegura una experiencia de emoción, velocidad y frescura que todos recordarán.",
+					4.0f, 9.0f, 3.2f, acuaticosCategory, toboganAcuaticoImages
 			);
 
-			// Create default juegos articles
+// Create default juegos articles
 			Article metegol = articleService.createArticle(
 					"Metegol",
 					"El clásico metegol llega para divertir a chicos y grandes. Con amigos o en familia, ¡saca tu mejor equipo y demuestra tus habilidades en este juego lleno de emoción y destreza!",
-					(float) 1, (float) 1, (float) 1, juegosCategory, metegolImages
+					1.2f, 2.0f, 0.9f, juegosCategory, metegolImages
 			);
 			Article tejo = articleService.createArticle(
 					"Tejo",
 					"Un juego clásico que nunca pasa de moda. El tejo es ideal para desafíos entre amigos y familiares, garantizando entretenimiento y competición en cada lanzamiento.",
-					(float) 1, (float) 1, (float) 1, juegosCategory, tejoImages
+					1.5f, 1.5f, 0.8f, juegosCategory, tejoImages
 			);
 			Article sapo = articleService.createArticle(
 					"Sapo",
 					"Prueba tu suerte y precisión en el legendario juego del sapo. Diversión asegurada para todas las edades mientras intentas encestar en el sapo y sumar puntos.",
-					(float) 1, (float) 1, (float) 1, juegosCategory, sapoImages
+					1.0f, 1.5f, 1.0f, juegosCategory, sapoImages
 			);
 			Article pool = articleService.createArticle(
 					"Pool",
 					"La elegancia y el desafío del pool ahora en tu evento. Perfecto para compartir un momento competitivo y relajado con amigos y familia.",
-					(float) 1, (float) 1, (float) 1, juegosCategory, poolImages
+					2.0f, 1.0f, 0.8f, juegosCategory, poolImages
 			);
 			Article pingPong = articleService.createArticle(
 					"Ping pong",
 					"La velocidad y agilidad del ping pong llevan la diversión al máximo. Un deporte clásico y atrapante para jugadores de todas las edades. ¡Desafía a tus amigos en una partida inolvidable!",
-					(float) 1, (float) 1, (float) 1, juegosCategory, pingPongImages
+					2.7f, 1.5f, 0.8f, juegosCategory, pingPongImages
 			);
 			Article yenga = articleService.createArticle(
 					"Yenga",
 					"Pura emoción y tensión en el juego de destreza más famoso. Con Yenga, la diversión crece a medida que la torre se tambalea. Perfecto para todos los que aman los desafíos y la estrategia.",
-					(float) 1, (float) 1, (float) 1, juegosCategory, yengaImages
+					0.5f, 0.5f, 1.5f, juegosCategory, yengaImages
 			);
 
 
